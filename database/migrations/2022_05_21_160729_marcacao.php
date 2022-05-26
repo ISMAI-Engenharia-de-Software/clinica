@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('data')->notNull();
             $table->string('motivo')->notNull();
             $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
-            $table->foreignId('funcionario_nif')->references('nif')->on('funcionario')->onDelete('cascade');
+            $table->foreign('funcionario_nif')->references('nif')->on('funcionario')->onDelete('cascade');
         });
     }
 
