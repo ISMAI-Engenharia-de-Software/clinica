@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('rel_despesas', function (Blueprint $table) {
             $table->id();
-            $table->int('data_inicio')->notNull();
+            $table->date('data_inicio')->notNull();
             $table->date('data_final')->notNull();
-            $table->bool('internamento')->notNull();
-			$table->bool('ambulatorio')->notNull();
-			$table->bool('servicos')->notNull();
+            $table->boolean('internamento')->notNull();
+			$table->boolean('ambulatorio')->notNull();
+			$table->boolean('servicos')->notNull();
 			$table->double('despesas_totais')->notNull();
         });
     }

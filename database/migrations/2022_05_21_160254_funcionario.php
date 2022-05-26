@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->unique()->notNull();
             $table->integer('telemovel')->unique()->notNull();
             $table->string('especializacao')->notNull();
-            $table->integer('departamento_id')->notNull();
+            $table->bigInteger('departamento_id')->unsigned()->notNull();
             $table->foreign('departamento_id')->references('id')->on('departamento')->onDelete('cascade');
         });
     }

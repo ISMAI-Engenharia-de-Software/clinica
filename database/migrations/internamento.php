@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->date('data')->notNull();
             $table->date('data_admissao')->notNull();
-            $table->bool('internado')->notNull();
+            $table->boolean('internado')->notNull();
             $table->string('observacoes')->notNull();
             $table->double('gastos')->notNull();
-            $table->integer('paciente_nif')->notNull();
+            $table->integer('paciente_nif')->unsigned()->notNull();
             $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
         });
     }
