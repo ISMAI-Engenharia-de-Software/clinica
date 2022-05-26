@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Departamento', function (Blueprint $table) {
+        Schema::create('departamento', function (Blueprint $table) {
             $table->id();
-            $table->string('Nome')->notNull()->unique();
-            $table->string('AreaDepartamento')->unique()->notNull();
-            $table->integer('NumTrabalhadores')->notNull();
-            $table->string('Responsavel')->notNull();
+            $table->string('nome')->notNull()->unique();
+            $table->string('area_departamento')->unique()->notNull();
+            $table->integer('num_trabalhadores')->notNull();
+            $table->string('responsavel')->notNull();
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('departamento');
     }
 };

@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Servico', function (Blueprint $table) {
+        Schema::create('servico', function (Blueprint $table) {
             $table->id();
-            $table->string('Nome')->notNull();
-            $table->string('Tipo')->notNull();
-            $table->string('Condicoes')->notNull();
-            $table->integer('Gastos')->notNull();
-            $table->foreignId('Paciente_NIF')->notNull();
+            $table->string('nome')->notNull();
+            $table->string('tipo')->notNull();
+            $table->string('condicoes')->notNull();
+            $table->integer('gastos')->notNull();
+            $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('servico');
     }
 };

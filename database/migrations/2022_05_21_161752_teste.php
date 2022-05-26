@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Teste', function (Blueprint $table) {
+        Schema::create('teste', function (Blueprint $table) {
             $table->id();
-            $table->date('Data')->notNull();
-            $table->string('TipoTeste')->notNull();
-            $table->string('Resultado')->notNull();
-            $table->string('Observacoes')->notNull()->unique();
-            $table->foreignId('Paciente_NIF')->notNull();
+            $table->date('data')->notNull();
+            $table->string('tipo_teste')->notNull();
+            $table->string('resultado')->notNull();
+            $table->string('observacoes')->notNull()->unique();
+            $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Teste');
+        Schema::dropIfExists('teste');
     }
 };

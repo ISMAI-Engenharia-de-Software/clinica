@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Internamento', function (Blueprint $table) {
+        Schema::create('internamento', function (Blueprint $table) {
             $table->id();
-            $table->date('Data')->notNull();
-            $table->date('Data_admissao')->notNull();
-            $table->bool('Internado')->notNull();
-            $table->string('Observacoes')->notNull();
-            $table->double('Gastos')->notNull();
-            $table->foreignId('Paciente_NIF')->notNull();
+            $table->date('data')->notNull();
+            $table->date('data_admissao')->notNull();
+            $table->bool('internado')->notNull();
+            $table->string('observacoes')->notNull();
+            $table->double('gastos')->notNull();
+            $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Internamento');
+        Schema::dropIfExists('internamento');
     }
 };

@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Funcionario', function (Blueprint $table) {
-            $table->integer('NIF')->unsigned();
-            $table->primary('NIF');
-            $table->string('Nome')->notNull();
-            $table->integer('Idade')->notNull();
-            $table->string('Email')->unique()->notNull();
-            $table->integer('Telemovel')->unique()->notNull();
-            $table->string('Especializacao')->notNull();
-            $table->foreignId('Departamento_ID')->notNull();
+        Schema::create('funcionario', function (Blueprint $table) {
+            $table->integer('nif')->unsigned()->primary();
+            $table->string('nome')->notNull();
+            $table->integer('idade')->notNull();
+            $table->string('email')->unique()->notNull();
+            $table->integer('telemovel')->unique()->notNull();
+            $table->string('especializacao')->notNull();
+            $table->foreign('departamento_id')->references('id')->on('departamento')->onDelete('cascade');
         });
     }
 
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('funcionario');
     }
 };

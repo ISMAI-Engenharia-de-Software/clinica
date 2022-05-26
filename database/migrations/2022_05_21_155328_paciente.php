@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Paciente', function (Blueprint $table) {
-            $table->integer('NIF')->unsigned();
-            $table->primary('NIF');
-            $table->string('Nome');
-            $table->integer('Idade');
+        Schema::create('paciente', function (Blueprint $table) {
+            $table->integer('nif')->unsigned()->primary();
+            $table->string('nome');
+            $table->integer('idade');
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::drop('Paciente');
+        Schema::drop('paciente');
     }
 };

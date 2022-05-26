@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('fat_ambulatorio', function (Blueprint $table) {
             $table->id();
-            $table->date('Data')->notNull();
-            $table->double('Valor')->notNull();
-            $table->foreignId('Paciente_NIF')->notNull();
+            $table->date('data')->notNull();
+            $table->double('valor')->notNull();
+            $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
         });
     }
 

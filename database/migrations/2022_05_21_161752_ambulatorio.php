@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('ambulatorio', function (Blueprint $table) {
             $table->id();
-            $table->date('Data')->notNull();
-            $table->string('Procedimento')->notNull();
-            $table->string('Gastos')->notNull();
-            $table->string('Estado')->notNull();
-            $table->foreignId('Paciente_NIF')->notNull();
+            $table->date('data')->notNull();
+            $table->string('procedimento')->notNull();
+            $table->string('gastos')->notNull();
+            $table->string('estado')->notNull();
+            $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
         });
     }
 

@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('marcacao', function (Blueprint $table) {
             $table->id();
-            $table->date('Data')->notNull();
-            $table->string('Motivo')->notNull();
-            $table->foreignId('Paciente_NIF')->notNull();
-            $table->foreignId('Funcionario_NIF')->notNull();
+            $table->date('data')->notNull();
+            $table->string('motivo')->notNull();
+            $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
+            $table->foreignId('funcionario_nif')->references('nif')->on('funcionario')->onDelete('cascade');
         });
     }
 
