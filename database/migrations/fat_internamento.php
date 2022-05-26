@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->date('data')->notNull();
             $table->double('valor')->notNull();
+            $table->int('paciente_nif')->notNull();
             $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
         });
     }

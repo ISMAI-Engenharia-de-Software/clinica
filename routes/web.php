@@ -18,9 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'teste'], function(){
-    Route::get('/','TesteController@index')->name('teste.index');
-    Route::get('/criar_teste','TesteController@create')->name('teste.pag_criar');
-    Route::post('/criar_teste','TesteController@store')->name('teste.criar');
-
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'rel_dt'], function(){
+    Route::get('/','DespesasTotaisController@index')->name('rel_dt.index');
+    Route::get('/criar_teste','DespesasTotaisController@create')->name('rel_dt.pag_criar');
+    Route::post('/criar_teste','DespesasTotaisController@store')->name('rel_dt.criar');
 });

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->bool('internado')->notNull();
             $table->string('observacoes')->notNull();
             $table->double('gastos')->notNull();
+            $table->int('paciente_nif')->notNull();
             $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
         });
     }
