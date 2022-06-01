@@ -22,7 +22,7 @@
                     <a class="nav-link" href="#">Relatórios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Testes</a>
+                    <a class="nav-link" href="{{ route('teste.index') }}">Testes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Funcionários</a>
