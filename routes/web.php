@@ -31,3 +31,8 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'teste'], function(
     Route::get('/{teste}/mostrar_reg','TesteController@mostrar_reg')->name('teste.mostrar_reg');
     Route::delete('/{teste}/eliminar','TesteController@eliminar')->name('teste.eliminar');
 });
+
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_servico'], function(){
+    Route::get('/','FaturaServicoController@index')->name('fat_servico.index');
+    Route::get('/','FaturaServicoController@imprimir')->name('fat_servico.imprimir');
+});
