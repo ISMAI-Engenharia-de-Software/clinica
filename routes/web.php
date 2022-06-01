@@ -34,5 +34,8 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'teste'], function(
 
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_servico'], function(){
     Route::get('/','FaturaServicoController@index')->name('fat_servico.index');
-    Route::get('/','FaturaServicoController@imprimir')->name('fat_servico.imprimir');
+    Route::get('/','FaturaServicoController@pag_criar')->name('fat_servico.pag_criar');
+    Route::post('/','FaturaServicoController@criar')->name('fat_servico.criar');
+    Route::get('/{fatura_servico}','FaturaServicoController@mostrar')->name('fat_servico.mostrar');
 });
+

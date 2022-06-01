@@ -9,15 +9,22 @@ class ImprimirController extends Controller
 {
     //
     public function index() {
-        return view('imprimir.index', ['imprimir' => fat_servico::paginate(20)]);
+        return view('fat_servico.index', ['fat_servico' => fat_servico::paginate(20)]);
     }
 
-    public function imprimir(fat_servico $fat_servico) {
-        $fat_servico->create();
-        return view('fat_servico.imprimir', ['fat_servico' => $fat_servico]);
+    public function pag_criar()
+    {
+        return view('fat_servico.criar');
     }
-
-
     
+    public function mostrar_reg(fat_servico $fat_servico)
+    {
+        return view('fat_servico.mostrar', ['fat_servico' => $fat_servico]);
+    }
+
+    public function criar() {
+        fat_servico::create();  
+    }
+
 
 }
