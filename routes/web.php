@@ -34,8 +34,15 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'teste'], function(
 
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_servico'], function(){
     Route::get('/','FaturaServicoController@index')->name('fat_servico.index');
-    Route::get('/','FaturaServicoController@pag_criar')->name('fat_servico.pag_criar');
-    Route::post('/','FaturaServicoController@criar')->name('fat_servico.criar');
-    Route::get('/{fatura_servico}','FaturaServicoController@mostrar')->name('fat_servico.mostrar');
+    Route::get('/criar_fatura_servico','FaturaServicoController@pag_criar')->name('fat_servico.pag_criar');
+    Route::post('/criar_fatura_servico','FaturaServicoController@criar')->name('fat_servico.criar');
+    Route::get('/{fatura_servico}/mostrar_reg','FaturaServicoController@mostrar')->name('fat_servico.mostrar');
+});
+
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'funcionario'], function(){
+    Route::get('/','FuncionarioController@index')->name('funcionario.index');
+    Route::get('/criar_funcionario','FuncionarioController@pag_criar')->name('funcionario.pag_criar');
+    Route::post('/criar_funcionario','FuncionarioController@criar')->name('funcionario.criar');
+    Route::get('/{funcionario}/mostrar_reg','FuncionarioController@mostrar_reg')->name('funcionario.mostrar_reg');
 });
 

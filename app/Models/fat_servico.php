@@ -9,6 +9,8 @@ class fat_servico extends Model
 {
     use HasFactory;
 
+    public $table = 'fat_servico';
+
     protected $fillable = [
         'Data',
         'Valor',
