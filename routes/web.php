@@ -23,3 +23,11 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'rel_dt'], function
     Route::get('/criar_teste','DespesasTotaisController@create')->name('rel_dt.pag_criar');
     Route::post('/criar_teste','DespesasTotaisController@store')->name('rel_dt.criar');
 });
+
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'teste'], function(){
+    Route::get('/','TesteController@index')->name('teste.index');
+    Route::get('/criar_teste','TesteController@pag_criar')->name('teste.pag_criar');
+    Route::post('/criar_teste','TesteController@criar')->name('teste.criar');
+    Route::get('/{teste}/mostrar_reg','TesteController@mostrar_reg')->name('teste.mostrar_reg');
+    Route::delete('/{teste}/eliminar','TesteController@eliminar')->name('teste.eliminar');
+});

@@ -1,18 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Website</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Users</a>
-          </li>
-        </ul>
-      </div>
+        <a class="navbar-brand" href="/">Clinica</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pacientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Consultas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ambulatório</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Faturas e Contas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Relatórios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Testes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Funcionários</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Departamentos</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
