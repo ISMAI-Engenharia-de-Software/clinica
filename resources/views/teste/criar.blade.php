@@ -1,5 +1,10 @@
 @extends('layouts.app-master')
 @section('content')
+    <style type="text/css">
+        body {
+            background-color: #c5d7f2;
+        }
+    </style>
     <div class="container">
         <h1>Criar Teste</h1>
         <form method="POST" action="">
