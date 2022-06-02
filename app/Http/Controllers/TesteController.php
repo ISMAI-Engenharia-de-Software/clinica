@@ -35,11 +35,11 @@ class TesteController extends Controller
     {
         $teste ??= new Teste();
         return request()->validate([
-            'Data' => 'required|date|before:now',
-            'TipoTeste' => 'required',
-            'Resultado' => 'required',
-            'Observacoes' => 'required',
-            'Paciente_NIF' => 'required'
+            'data' => 'required|date|before:now',
+            'tipo_teste' => 'required',
+            'resultado' => 'required',
+            'observacoes' => 'required',
+            'paciente_nif' => 'required'
         ]);
     }
 

@@ -4,6 +4,7 @@
         body {
             background-color: #c5d7f2;
         }
+
     </style>
     <div class="container">
         <h1>Criar Teste</h1>
@@ -11,18 +12,15 @@
             @csrf
             <div class="form-group">
                 @php
-                    $ids = DB::table('paciente')->pluck('NIF');
+                    $ids = DB::table('paciente')->pluck('nif');
                     $patt = null;
-
-                    for ($i = 0; $i < count($ids) - 1; $i++) {
+                    for ($i = 0; $i < count($ids); $i++) {
                         $patt = $patt . $ids[$i] . '|';
-                        $cont = $i;
                     }
-                    $patt = $patt . $ids[$cont + 1];
                 @endphp
                 <label for="Paciente_NIF" class="form-label">NIF do Paciente</label>
                 <input required chosen class="form-control" placeholder="NIF do Paciente" list="pacientes"
-                    name="Paciente_NIF" pattern="^(@php
+                    name="paciente_nif" pattern="^(@php
                         echo $patt;
                     @endphp)$">
 
@@ -34,10 +32,9 @@
                     @endforeach
                 </datalist>
             </div>
-
             <div class="form-group">
                 <label for="Data" class="form-label">Data</label>
-                <input required type="date" name="Data" class="form-control" placeholder="Data">
+                <input required type="date" name="data" class="form-control" placeholder="Data">
                 @if ($errors->has('Data'))
                     <span class="text-danger">{{ $errors->first('Data') }}</span>
                 @endif
@@ -45,7 +42,7 @@
 
             <div class="form-group">
                 <label for="TipoTeste" class="form-label">Tipo de Teste</label>
-                <input required type="text" name="TipoTeste" class="form-control" placeholder="TipoTeste">
+                <input required type="text" name="tipo_teste" class="form-control" placeholder="TipoTeste">
                 @if ($errors->has('TipoTeste'))
                     <span class="text-danger">{{ $errors->first('TipoTeste') }}</span>
                 @endif
@@ -53,7 +50,7 @@
 
             <div class="form-group">
                 <label for="Resultado" class="form-label">Resultado</label>
-                <input required list="resultados" name="Resultado" class="form-control" placeholder="Resultado">
+                <input required list="resultados" name="resultado" class="form-control" placeholder="Resultado">
                 <datalist id="resultados">
                     <option value="Positivo">
                     <option value="Negativo">
@@ -65,7 +62,7 @@
 
             <div class="form-group">
                 <label for="Observacoes" class="form-label">Observações</label>
-                <input required type="text" name="Observacoes" class="form-control" placeholder="Observacoes"
+                <input required type="text" name="observacoes" class="form-control" placeholder="Observacoes"
                     value="Sem Observações">
                 @if ($errors->has('Observacoes'))
                     <span class="text-danger">{{ $errors->first('Observacoes') }}</span>

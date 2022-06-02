@@ -13,9 +13,9 @@ class Teste extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'Data',
-        'TipoTeste',
-        'Resultado',
-        'Observacoes',
-        'Paciente_NIF'];
+        'data',
+        'tipo_teste',
+        'resultado',
+        'observacoes',
+        'paciente_nif'];
 }
