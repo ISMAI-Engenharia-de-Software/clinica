@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rel_despesas', function (Blueprint $table) {
+        Schema::create('rel_faturas', function (Blueprint $table) {
             $table->id();
             $table->date('data_inicio')->notNull();
             $table->date('data_final')->notNull();
-            $table->boolean('internamento')->notNull();
-			$table->boolean('ambulatorio')->notNull();
-			$table->boolean('servicos')->notNull();
-			$table->double('despesas_totais')->notNull();
+            $table->boolean('internamento')->notNull()->default(false);
+			$table->boolean('ambulatorio')->notNull()->default(false);
+			$table->boolean('servicos')->notNull()->default(false);
+			$table->double('valor_total')->notNull()->default(0.0);
         });
     }
 
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rel_despesas');
+        Schema::dropIfExists('rel_faturas');
     }
 };
