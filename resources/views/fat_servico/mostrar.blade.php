@@ -15,13 +15,6 @@
         </div>
         <br>
         <div class="form-group row">
-            <label for="Idade" class="col-sm-2 col-form-label">Idade</label>
-            <div class="col-sm-10">
-                <input required type="text"disabled class="form-control" value="{{$fat_servico->Idade}}">
-            </div>
-        </div>
-        <br>
-        <div class="form-group row">
             <label for="Data" class="col-sm-2 col-form-label">Data</label>
             <div class="col-sm-10">
                 <input required type="text"disabled class="form-control" value="{{$fat_servico->Data}}">
