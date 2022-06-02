@@ -35,9 +35,9 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'teste'], function(
 
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_servico'], function(){
     Route::get('/','FaturaServicoController@index')->name('fat_servico.index');
-    Route::get('/criar_fatura_servico','FaturaServicoController@pag_criar')->name('fat_servico.pag_criar');
-    Route::post('/criar_fatura_servico','FaturaServicoController@criar')->name('fat_servico.criar');
-    Route::get('/{fatura_servico}/mostrar_reg','FaturaServicoController@mostrar')->name('fat_servico.mostrar');
+    Route::get('/criar_fat_servico','FaturaServicoController@pag_criar')->name('fat_servico.pag_criar');
+    Route::post('/criar_fat_servico','FaturaServicoController@criar')->name('fat_servico.criar');
+    Route::get('/{fat_servico}/mostrar_reg','FaturaServicoController@mostrar')->name('fat_servico.mostrar');
 });
 
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'funcionario'], function(){
