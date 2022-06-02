@@ -19,7 +19,7 @@
                     <a class="nav-link" href="#">Faturas e Contas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('relVServicos.index') }}">Relatórios</a> 
+                    <a class="nav-link" href="#">Relatórios</a> 
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('teste.index') }}">Testes</a>
