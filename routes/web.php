@@ -46,8 +46,8 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'funcionario'], fun
     Route::get('/{funcionario}/mostrar_reg','FuncionarioController@mostrar_reg')->name('funcionario.mostrar_reg');
 });
 
-Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relvenservicos'], function(){
-  Route::get('/','RelVenServicosController@index')->name('relvenservicos.index');
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVServicos'], function(){
+  Route::get('/','RelVenServicosController@index')->name('relVServicos.index');
   Route::get('/criar_relVServicos','RelVenServicosController@pag_criar')->name('relVServicos.pag_criar');
   Route::post('/criar_ relVServicos','RelVenServicosController@criar')->name('relVServicos.criar');
   Route::get('/{relVServicos}/mostrar_ relVServicos','RelVenServicosController@mostrar')->name('relVServicos.mostrar');
