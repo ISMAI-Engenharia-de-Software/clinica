@@ -7,7 +7,7 @@
     </style>
     <div class="container">
         <div class="form-group row">
-            <label for="Paciente" class="col-sm-2 col-form-label">Paciente</label>
+            <label for="Paciente" class="col-sm-2 col-form-label">Fatura</label>
             <div class="col-sm-10">
                 <input required type="text" disabled class="form-control"
                     value="{{$n_paciente = DB::table('paciente')->where('NIF', $fat_servico->Paciente_NIF)->value('nome')}}">

@@ -36,3 +36,4 @@
         {!! $rels->links() !!}
     </div>
 @endsection
+
