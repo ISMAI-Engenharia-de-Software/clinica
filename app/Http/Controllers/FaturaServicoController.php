@@ -19,16 +19,15 @@ class ImprimirController extends Controller
     {
         return view('fat_servico.criar');
     }
-
-    public function mostrar_reg(fat_servico $fat_servico)
+    
+    public function mostrar(fat_servico $fat_servico)
     {
         return view('fat_servico.mostrar', ['fat_servico' => $fat_servico]);
     }
 
     public function criar() {
         fat_servico::create($this->validatefat_servico());
-        return (redirect(route('fat_servico.mostrar'))->with('success', 'Fatura criada com sucesso'));
+        return (redirect(route('fat_servico.mostrar'))->with('success', 'Fatura criada com sucesso'));  
     }
-
-
 }
+
