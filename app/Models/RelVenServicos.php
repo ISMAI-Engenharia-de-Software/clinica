@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class RelVenServicos extends Model
 {
     use HasFactory;
+
+    public $table = 'RelVenServicos';
+
+    protected $fillable = [
+        'nome',
+        'tipo',
+        'condicoes',
+        'gastos',
+        'paciente_nif'];
 }
