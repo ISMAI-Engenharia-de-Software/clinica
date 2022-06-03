@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Funcionario;
-use Illuminate\Http\Request;
+use App\Http\Requests\FuncionarioRequest;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 
@@ -12,8 +12,10 @@ class FuncionarioController extends Controller
 
     public function index()
     {
+        $funcionariot = Funcionario::paginate(10);
         Paginator::useBootstrap();
-        return view('funcionario.index', ['funcionario' => Funcionario::paginate(40)]);
+
+        return view('funcionario.index', compact('funcionariot'));
     }
     public function pag_criar()
     {
@@ -23,9 +25,10 @@ class FuncionarioController extends Controller
     {
         return view('funcionario.mostrar_reg', ['funcionario' => $funcionario]);
     }
-    public function criar()
+    public function criar(FuncionarioRequest $funcionario)
     {
-        Funcionario::create($this->validateFuncionario());
+        $funcionariot = $funcionario->validated();
+        $funcionario= Funcionario::create($funcionariot);
         return (redirect(route('funcionario.index'))->with('success', 'Funcionario criado com sucesso'));
     }
 }
