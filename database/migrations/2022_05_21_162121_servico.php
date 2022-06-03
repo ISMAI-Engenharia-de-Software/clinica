@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('servico', function (Blueprint $table) {
             $table->id();
+            $table->date('data')->notNull();
             $table->string('nome')->notNull();
             $table->string('tipo')->notNull();
             $table->string('condicoes')->notNull();
-            $table->integer('gastos')->notNull();
+            $table->double('gastos')->notNull();
             $table->integer('paciente_nif')->unsigned()->notNull();
             $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
         });

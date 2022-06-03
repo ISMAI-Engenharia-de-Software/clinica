@@ -25,6 +25,14 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relatorioFaturas']
     Route::delete('/{rel}/apagar_relatorio', 'RelatorioFaturaController@apagar')->name('rel_fat.apagar');
 });
 
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relatorioDespesas'], function(){
+    Route::get('/','DespesasTotaisController@index')->name('rel_dt.index');
+    Route::get('/criar_relatorio','DespesasTotaisController@pag_criar')->name('rel_dt.pag_criar');
+    Route::post('/criar_relatorio','DespesasTotaisController@criar')->name('rel_dt.criar');
+    Route::get('/{rel}/relatorio','DespesasTotaisController@pag_rel')->name('rel_dt.pag_rel');
+    Route::delete('/{rel}/apagar_relatorio', 'DespesasTotaisController@apagar')->name('rel_dt.apagar');
+});
+
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'teste'], function(){
     Route::get('/','TesteController@index')->name('teste.index');
     Route::get('/criar_teste','TesteController@pag_criar')->name('teste.pag_criar');
