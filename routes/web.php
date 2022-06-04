@@ -41,6 +41,14 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'teste'], function(
     Route::delete('/{teste}/eliminar','TesteController@eliminar')->name('teste.eliminar');
 });
 
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'marcacao'], function(){
+    Route::get('/','MarcacaoController@index')->name('marcacao.index');
+    Route::get('/criar_marcacao','MarcacaoController@pag_criar')->name('marcacao.pag_criar');
+    Route::post('/criar_marcacao','MarcacaoController@criar')->name('marcacao.criar');
+    Route::get('/{marcacao}/mostrar_reg','MarcacaoController@mostrar_reg')->name('marcacao.mostrar_reg');
+    Route::delete('/{marcacao}/eliminar','MarcacaoController@eliminar')->name('marcacao.eliminar');
+});
+
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_servico'], function(){
     Route::get('/','FaturaServicoController@index')->name('fat_servico.index');
     Route::get('/criar_fat_servico','FaturaServicoController@pag_criar')->name('fat_servico.pag_criar');
