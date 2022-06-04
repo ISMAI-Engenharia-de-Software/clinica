@@ -33,6 +33,7 @@
                         <td>{{ $n_funcionario = DB::table('funcionario')->where('nif', $marcacao->funcionario_nif)->value('nome') }} </td>
                         <td>{{ $marcacao->motivo }}</td>
                         <td><a href="{{ route('marcacao.mostrar_reg', $marcacao->id) }}" class="btn btn-primary">Ver</a></td>
+                        <td><a href="{{route('marcacao.edit', $user->id)}}" class="btn btn-info">Edit</a></td>
                         <td>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['marcacao.eliminar', $marcacao->id], 'style' => 'display::inline']) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
