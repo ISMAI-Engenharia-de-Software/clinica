@@ -47,6 +47,8 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'marcacao'], functi
     Route::post('/criar_marcacao','MarcacaoController@criar')->name('marcacao.criar');
     Route::get('/{marcacao}/mostrar_reg','MarcacaoController@mostrar_reg')->name('marcacao.mostrar_reg');
     Route::delete('/{marcacao}/eliminar','MarcacaoController@eliminar')->name('marcacao.eliminar');
+    Route::get('/{marcacao}/editar','MarcacaoController@editar')->name('marcacao.editar');
+    Route::patch('/{marcacao}/atualizar','MarcacaoController@atualizar')->name('marcacao.atualizar');
 });
 
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_servico'], function(){
