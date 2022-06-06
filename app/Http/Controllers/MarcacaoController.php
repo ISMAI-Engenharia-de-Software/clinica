@@ -6,6 +6,7 @@ use App\Models\Marcacao;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\AtualizarMarcacaoRequest;
 
 class MarcacaoController extends Controller
 {
@@ -41,6 +42,18 @@ class MarcacaoController extends Controller
             'funcionario_nif' => 'required'
         ]);
     }
+
+    public function editar(Marcacao $marcacao)
+    {
+        return view('marcacao.editar',['marcacao'=>$marcacao]);
+    }
+
+    public function atualizar(Marcacao $marcacao, AtualizarMarcacaoRequest $request)
+    {
+        $marcacao->update($request->validated());
+        return redirect()->route('marcacao.index')->with('success','Marcação Atualizada');
+    }
+
 
     public function eliminar(Marcacao $marcacao)
     {
