@@ -25,21 +25,21 @@ class RelatorioFaturaController extends Controller
         $dataInicial = $reqS['data_inicio']; $dataFinal = $reqS['data_final']; $relDT=0;
 
         if ($req['internamento'] == "1") {
-            $qInt = DB::table('fat_internamento')->where('data', '>', $dataInicial)->where('data', '<', $dataFinal)->pluck('id');
+            $qInt = DB::table('fat_internamento')->where('data', '>=', $dataInicial)->where('data', '<=', $dataFinal)->pluck('id');
             foreach ($qInt as $id) {
                 $relDT += DB::table('fat_internamento')->where('id', $id)->value('valor');
             }
         }
 
         if ($req['ambulatorio'] == "1") {
-            $qInt = DB::table('fat_ambulatorio')->where('data', '>', $dataInicial)->where('data', '<', $dataFinal)->pluck('id');
+            $qInt = DB::table('fat_ambulatorio')->where('data', '>=', $dataInicial)->where('data', '<=', $dataFinal)->pluck('id');
             foreach ($qInt as $id) {
                 $relDT += DB::table('fat_ambulatorio')->where('id', $id)->value('valor');
             }
         }
 
         if ($req['servicos'] == "1") {
-            $qInt = DB::table('fat_servico')->where('data', '>', $dataInicial)->where('data', '<', $dataFinal)->pluck('id');
+            $qInt = DB::table('fat_servico')->where('data', '>=', $dataInicial)->where('data', '<=', $dataFinal)->pluck('id');
             foreach ($qInt as $id) {
                 $relDT += DB::table('fat_servico')->where('id', $id)->value('valor');
             }

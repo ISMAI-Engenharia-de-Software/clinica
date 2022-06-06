@@ -9,7 +9,7 @@
     <div style="margin-top: 20px">
         @include('layouts.partials.messages')
     </div>
-    <a href="{{route('rel_fat.pag_criar')}}" class="btn btn-success">Novo Relatório</a>
+    <a href="{{route('rel_dt.pag_criar')}}" class="btn btn-success">Novo Relatório</a>
     <table style="margin-top: 20px" class="table table-striped table-dark">
         <thead>
             <tr>
@@ -48,7 +48,7 @@
                         @else
                             <?php echo "Incluído" ?>
                         @endif
-                    <td>{{$rel->valor_total}}€</td>
+                    <td>{{$rel->despesas_totais}}€</td>
                     <td><a href="{{route('rel_dt.pag_rel', $rel->id)}}" class="btn btn-primary">Ver</a></td>
                     <td>
                         {!! Form::open(['method' => 'DELETE', 'route' => ['rel_dt.apagar', $rel->id], 'style' => 'display:inline']) !!}

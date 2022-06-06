@@ -6,7 +6,7 @@
         }
     </style>
     <div class="container">
-        <h1>Novo Relatório de Faturas</h1>
+        <h1>Novo Relatório de Despesas Totais</h1>
         <form method="POST" action=''>
             @csrf
             <div class="form-group">
