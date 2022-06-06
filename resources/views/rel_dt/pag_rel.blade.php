@@ -17,8 +17,8 @@
         <p>
             Data Inicial: <strong>{{$rel->data_inicio}}</strong> | 
             Data Final: <strong>{{$rel->data_final}}</strong> | 
-            Valor Total: <strong>{{$rel->despesas_totais}}€</strong> | 
-            Tipo Fatura:
+            Despesa Total: <strong>{{$rel->despesas_totais}}€</strong> | 
+            Tipo Despesa:
             @if ($rel->internamento == 1)
                 <strong>Internamento</strong>;
             @endif
@@ -41,7 +41,7 @@
             <tbody>
                 <?php $dataInicial = $rel->data_inicio; $dataFinal = $rel->data_final; $count = 0 ?>
                 @if ($rel->internamento == 1)
-                    <?php $qInt = DB::table('internamento')->where('data', '>', $dataInicial)->where('data', '<', $dataFinal)->pluck('id'); ++$count ?>
+                    <?php $qInt = DB::table('internamento')->where('data', '>=', $dataInicial)->where('data', '<=', $dataFinal)->pluck('id'); ++$count ?>
                     @foreach ($qInt as $id)
                         <tr>
                             <td>Internamento</td>
@@ -51,7 +51,7 @@
                     @endforeach
                 @endif
                 @if ($rel->ambulatorio == 1)
-                    <?php $qAmb = DB::table('ambulatorio')->where('data', '>', $dataInicial)->where('data', '<', $dataFinal)->pluck('id'); ++$count ?>
+                    <?php $qAmb = DB::table('ambulatorio')->where('data', '>=', $dataInicial)->where('data', '<=', $dataFinal)->pluck('id'); ++$count ?>
                     @foreach ($qAmb as $id)
                         <tr>
                             <td>Ambulatório</td>
@@ -61,7 +61,7 @@
                     @endforeach
                 @endif
                 @if ($rel->servicos == 1)
-                    <?php $qSer = DB::table('servico')->where('data', '>', $dataInicial)->where('data', '<', $dataFinal)->pluck('id'); ++$count ?>
+                    <?php $qSer = DB::table('servico')->where('data', '>=', $dataInicial)->where('data', '<=', $dataFinal)->pluck('id'); ++$count ?>
                     @foreach ($qSer as $id)
                         <tr>
                             <td>Serviços</td>
