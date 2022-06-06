@@ -41,6 +41,14 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'teste'], function(
     Route::delete('/{teste}/eliminar','TesteController@eliminar')->name('teste.eliminar');
 });
 
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'marcacao'], function(){
+    Route::get('/','MarcacaoController@index')->name('marcacao.index');
+    Route::get('/criar_marcacao','MarcacaoController@pag_criar')->name('marcacao.pag_criar');
+    Route::post('/criar_marcacao','MarcacaoController@criar')->name('marcacao.criar');
+    Route::get('/{marcacao}/mostrar_reg','MarcacaoController@mostrar_reg')->name('marcacao.mostrar_reg');
+    Route::delete('/{marcacao}/eliminar','MarcacaoController@eliminar')->name('marcacao.eliminar');
+});
+
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_servico'], function(){
     Route::get('/','FaturaServicoController@index')->name('fat_servico.index');
     Route::get('/criar_fat_servico','FaturaServicoController@pag_criar')->name('fat_servico.pag_criar');
@@ -60,4 +68,11 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVServicos'], fu
   Route::get('/criar_relVServicos','RelVenServicosController@pag_criar')->name('relVServicos.pag_criar');
   Route::post('/criar_ relVServicos','RelVenServicosController@criar')->name('relVServicos.criar');
   Route::get('/{relVServicos}/mostrar_ relVServicos','RelVenServicosController@mostrar')->name('relVServicos.mostrar');
+});
+
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVAmbulatorio'], function(){
+  Route::get('/','RelVenAmbulatorioController@index')->name('relVAmbulatorio.index');
+  Route::get('/criar_relVAmbulatorio','RelVenAmbulatorioController@pag_criar')->name('relVAmbulatorio.pag_criar');
+  Route::post('/criar_ relVAmbulatorio','RelVenAmbulatorioController@criar')->name('relVAmbulatorio.criar');
+  Route::get('/{relVAmbulatorio}/mostrar_ relVAmbulatorio','RelVenAmbulatorioController@mostrar')->name('relVAmbulatorio.mostrar');
 });

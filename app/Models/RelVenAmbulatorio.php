@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RelVenServicos extends Model
+class RelVenAmbulatorio extends Model
 {
   use HasFactory;
 
-  public $table = 'rel_ven_servicos';
+  public $table = 'rel_ven_ambulatorio';
 
   protected $fillable = [
     'data_inicio',
     'data_final',
     'nif_paciente',
     'nome_paciente',
-    'tipo_servico',
+    'procedimento',
     'preco',
     'anotacoes'
   ];
