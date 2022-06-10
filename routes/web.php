@@ -51,6 +51,14 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'marcacao'], functi
     Route::patch('/{marcacao}/atualizar','MarcacaoController@atualizar')->name('marcacao.atualizar');
 });
 
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'paciente'], function(){
+    Route::get('/','PacienteController@index')->name('paciente.index');
+    Route::get('/criar_paciente','PacienteController@pag_criar')->name('paciente.pag_criar');
+    Route::post('/criar_paciente','PacienteController@criar')->name('paciente.criar');
+    Route::get('/{paciente}/mostrar_reg','PacienteController@mostrar_reg')->name('paciente.mostrar_reg');
+    Route::delete('/{paciente}/eliminar','PacienteController@eliminar')->name('paciente.eliminar');
+});
+
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_servico'], function(){
     Route::get('/','FaturaServicoController@index')->name('fat_servico.index');
     Route::get('/criar_fat_servico','FaturaServicoController@pag_criar')->name('fat_servico.pag_criar');
