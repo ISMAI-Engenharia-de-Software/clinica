@@ -7,70 +7,36 @@
 
     </style>
     <div class="container">
-        <h1>Criar Teste</h1>
+        <h1>Criar Paciente</h1>
         <form method="POST" action="">
             @csrf
             <div class="form-group">
-                @php
-                    $ids = DB::table('paciente')->pluck('nif');
-                    $patt = null;
-                    for ($i = 0; $i < count($ids); $i++) {
-                        $patt = $patt . $ids[$i] . '|';
-                    }
-                @endphp
-                <label for="Paciente_NIF" class="form-label">NIF do Paciente</label>
-                <input required chosen class="form-control" placeholder="NIF do Paciente" list="pacientes"
-                    name="paciente_nif" pattern="^(@php
-                        echo $patt;
-                    @endphp)$">
-
-                <datalist id="pacientes">
-
-                    @foreach ($ids as $id_paciente)
-                        <option value="{{ $id_paciente }}">
-                            {{ DB::table('paciente')->where('NIF', $id_paciente)->value('nome') }}</option>
-                    @endforeach
-                </datalist>
-            </div>
-            <div class="form-group">
-                <label for="Data" class="form-label">Data</label>
-                <input required type="date" name="data" class="form-control" placeholder="Data">
-                @if ($errors->has('Data'))
-                    <span class="text-danger">{{ $errors->first('Data') }}</span>
+                <label for="nif" class="form-label">NIF do Paciente</label>
+                <input required type="text" name="nif" class="form-control" placeholder="NIF">
+                @if ($errors->has('nif'))
+                    <span class="text-danger">{{ $errors->first('nif') }}</span>
                 @endif
             </div>
 
             <div class="form-group">
-                <label for="TipoTeste" class="form-label">Tipo de Teste</label>
-                <input required type="text" name="tipo_teste" class="form-control" placeholder="TipoTeste">
-                @if ($errors->has('TipoTeste'))
-                    <span class="text-danger">{{ $errors->first('TipoTeste') }}</span>
+                <label for="nome" class="form-label">Nome do Paciente</label>
+                <input required type="text" name="nome" class="form-control" placeholder="Nome do Paciente">
+                @if ($errors->has('nome'))
+                    <span class="text-danger">{{ $errors->first('nome') }}</span>
+                @endif
+            </div>
+            
+            <div class="form-group">
+                <label for="idade" class="form-label">Idade</label>
+                <input required type="text" name="idade" class="form-control" placeholder="Idade">
+                @if ($errors->has('idade'))
+                    <span class="text-danger">{{ $errors->first('idade') }}</span>
                 @endif
             </div>
 
-            <div class="form-group">
-                <label for="Resultado" class="form-label">Resultado</label>
-                <input required list="resultados" name="resultado" class="form-control" placeholder="Resultado">
-                <datalist id="resultados">
-                    <option value="Positivo">
-                    <option value="Negativo">
-                </datalist>
-                @if ($errors->has('Resultado'))
-                    <span class="text-danger">{{ $errors->first('Resultado') }}</span>
-                @endif
-            </div>
-
-            <div class="form-group">
-                <label for="Observacoes" class="form-label">Observações</label>
-                <input required type="text" name="observacoes" class="form-control" placeholder="Observacoes"
-                    value="Sem Observações">
-                @if ($errors->has('Observacoes'))
-                    <span class="text-danger">{{ $errors->first('Observacoes') }}</span>
-                @endif
-            </div>
             <br>
             <button type="submit" class="btn btn-primary">Criar</button>
-            <a href="{{ route('teste.index') }}" class="btn btn-dark">Cancelar</a>
+            <a href="{{ route('paciente.index') }}" class="btn btn-dark">Cancelar</a>
         </form>
     </div>
 @endsection

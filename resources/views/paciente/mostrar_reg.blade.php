@@ -10,33 +10,26 @@
             <label for="Paciente" class="col-sm-2 col-form-label">Paciente</label>
             <div class="col-sm-10">
                 <input required type="text" disabled class="form-control"
-                    value="{{ $n_paciente = DB::table('paciente')->where('nif', $teste->paciente_nif)->value('nome') }}">
+                    value="{{ $paciente->nif }}">
             </div>
         </div>
         <br>
         <div class="form-group row">
-            <label for="Data" class="col-sm-2 col-form-label">Data</label>
+            <label for="Nome" class="col-sm-2 col-form-label">Nome do Paciente</label>
             <div class="col-sm-10">
-                <input required type="text" disabled class="form-control" value="{{ $teste->data }}">
+                <input required type="text" disabled class="form-control" value="{{ $paciente->nome }}">
             </div>
         </div>
         <br>
         <div class="form-group row">
-            <label for="TipoTeste" class="col-sm-2 col-form-label">Tipo de Teste</label>
+            <label for="Idade" class="col-sm-2 col-form-label">Idade</label>
             <div class="col-sm-10">
-                <input required type="text" disabled class="form-control" value="{{ $teste->tipo_teste }}">
-            </div>
-        </div>
-        <br>
-        <div class="form-group row">
-            <label for="Observacoes" class="col-sm-2 col-form-label">Observações</label>
-            <div class="col-sm-10">
-                <input required type="text" disabled class="form-control" value="{{ $teste->observacoes }}">
+                <input required type="text" disabled class="form-control" value="{{ $paciente->idade }}">
             </div>
         </div>
         <br>
         <div>
-            <a href="{{ route('teste.index') }}" class="btn btn-dark">Voltar</a>
+            <a href="{{ route('paciente.index') }}" class="btn btn-dark">Voltar</a>
         </div>
     </div>
 @endsection

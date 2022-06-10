@@ -10,34 +10,27 @@
 
     </style>
     <div class="container">
-        <h1>Lista de Testes</h1>
-        <a href="{{ route('teste.pag_criar') }}" class="btn btn-success">Novo Teste</a>
+        <h1>Lista de Pacientes</h1>
+        <a href="{{ route('paciente.pag_criar') }}" class="btn btn-success">Novo Paciente</a>
         <br><br>
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
-                    <th scope="col" width="1%">#</th>
-                    <th scope="col" width="10%">Paciente</th>
-                    <th scope="col" width="10%">Data</th>
-                    <th scope="col" width="10%">Tipo de Teste</th>
-                    <th scope="col" width="15%">Resultado</th>
-                    <th scope="col">Observações</th>
+                    <th scope="col" width="20%">NIF</th>
+                    <th scope="col">Nome do Paciente</th>
+                    <th scope="col" width="15%">Idade</th>
                     <th scope="col" width="1%" colspan='3'></th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($testes as $teste)
+                @foreach ($pacientes as $paciente)
                     <tr>
-                        <th scope="row">{{ $teste->id }}</th>
-                        <td>{{ $n_paciente = DB::table('paciente')->where('nif', $teste->paciente_nif)->value('nome') }}
-                        </td>
-                        <td>{{ $teste->data }}</td>
-                        <td>{{ $teste->tipo_teste }}</td>
-                        <td>{{ $teste->resultado }}</td>
-                        <td>{{ $teste->observacoes }}</td>
-                        <td><a href="{{ route('teste.mostrar_reg', $teste->id) }}" class="btn btn-primary">Ver</a></td>
+                        <th scope="row">{{ $paciente->nif }}</th>
+                        <td>{{ $paciente->nome }}</td>
+                        <td>{{ $paciente->idade }}</td>
+                        <td><a href="{{ route('paciente.mostrar_reg', $paciente->nif) }}" class="btn btn-primary">Ver</a></td>
                         <td>
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['teste.eliminar', $teste->id], 'style' => 'display::inline']) !!}
+                            {!! Form::open(['method' => 'DELETE', 'route' => ['paciente.eliminar', $paciente->nif], 'style' => 'display::inline']) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
 
@@ -48,6 +41,6 @@
         </table>
     </div>
     <div class="d-flex">
-        {!! $testes->links() !!}
+        {!! $pacientes->links() !!}
     </div>
 @endsection

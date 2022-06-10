@@ -11,7 +11,7 @@ class Paciente extends Model
 
     public $table = 'paciente';
     public $timestamps = false;
-
+    protected $primaryKey = 'nif';
     protected $fillable = [
         'nif',
         'nome',

@@ -29,13 +29,13 @@ class PacienteController extends Controller
         return (redirect(route('paciente.index'))->with('success', 'Paciente adicionado'));
     }
 
-    protected function validateTeste(?Paciente $paciente = null): array
+    protected function validatePaciente(?Paciente $paciente = null): array
     {
         $paciente ??= new Paciente();
         return request()->validate([
-            'nif' => 'required|unique',
+            'nif' => 'required|unique:paciente,nif|max:9|min:9',
             'nome' => 'required',
-            'idade' => 'required|numeric|gt:0'
+            'idade' => 'required|numeric|gt:0|lt:160'
         ]);
     }
     public function eliminar(Paciente $paciente)
