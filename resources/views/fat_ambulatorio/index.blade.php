@@ -31,7 +31,7 @@
                         </td>
                         <td>{{ $fat_ambulatorio->data }}</td>
                         <td>{{ $fat_ambulatorio->valor }}</td>
-                        <td><a href="{{ route('fat_ambulatorio.mostrar', $fat_ambulatorio->id) }}" class="btn btn-primary">Ver</a></td>
+                        <td><a href="{{ route('fat_ambulatorio.mostrar_fat_ambulatorio', $fat_ambulatorio->id) }}" class="btn btn-primary">Ver</a></td>
                     </tr>
                 @endforeach
             </tbody>
