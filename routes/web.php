@@ -71,6 +71,7 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'funcionario'], fun
     Route::get('/criar_funcionario','FuncionarioController@pag_criar')->name('funcionario.pag_criar');
     Route::post('/criar_funcionario','FuncionarioController@criar')->name('funcionario.criar');
     Route::get('/{funcionario}/mostrar_reg','FuncionarioController@mostrar_reg')->name('funcionario.mostrar_reg');
+    Route::delete('/{funcionario}/eliminar','FuncionarioController@eliminar')->name('funcionario.eliminar');
 });
 
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVServicos'], function(){

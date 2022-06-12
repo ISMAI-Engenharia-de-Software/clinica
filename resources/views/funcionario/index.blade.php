@@ -37,7 +37,9 @@
                         <td>{{ $funcionario->departamento_id }}</td>
                         <td><a href="{{ route('funcionario.mostrar_reg', $funcionario->id) }}" class="btn btn-primary">Ver</a></td>
                         <td>
-
+                            {!! Form::open(['method' => 'DELETE', 'route' => ['funcionario.eliminar', $funcionario->id], 'style' => 'display::inline']) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                            {!! Form::close() !!}
                         </td>
                     </tr>
                 @endforeach

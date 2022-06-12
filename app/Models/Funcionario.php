@@ -12,11 +12,11 @@ class Funcionario extends Model
     public $table = 'funcionario';
 
     protected $fillable = [
-        'NIF',
-        'Nome',
-        'Idade',
-        'Email',
-        'Telemovel',
-        'Especializacao',
-        'Departamento_ID'];
+        'nif',
+        'nome',
+        'idade',
+        'email',
+        'telemovel',
+        'especializacao',
+        'departamento_id'];
 }

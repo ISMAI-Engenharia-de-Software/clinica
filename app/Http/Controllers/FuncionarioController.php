@@ -31,4 +31,10 @@ class FuncionarioController extends Controller
         $funcionario= Funcionario::create($funcionariot);
         return (redirect(route('funcionario.index'))->with('success', 'Funcionario criado com sucesso'));
     }
+
+    public function eliminar(Funcionario $funcionario)
+    {
+        $funcionario->delete();
+        return redirect(route('funcionario.index'))->with('success','Funcionario eliminado com sucesso');
+    }
 }
