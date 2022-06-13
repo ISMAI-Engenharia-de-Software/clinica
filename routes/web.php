@@ -74,11 +74,11 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'funcionario'], fun
     Route::delete('/{funcionario}/eliminar','FuncionarioController@eliminar')->name('funcionario.eliminar');
 });
 
-Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVServicos'], function(){
-  Route::get('/','RelVenServicosController@index')->name('relVServicos.index');
-  Route::get('/criar_relVServicos','RelVenServicosController@pag_criar')->name('relVServicos.pag_criar');
-  Route::post('/criar_ relVServicos','RelVenServicosController@criar')->name('relVServicos.criar');
-  Route::get('/{relVServicos}/mostrar_ relVServicos','RelVenServicosController@mostrar')->name('relVServicos.mostrar');
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVservicos'], function(){
+  Route::get('/','RelVenServicosController@index')->name('relVservicos.index');
+  Route::get('/criar_relVservicos','RelVenServicosController@pag_criar')->name('relVservicos.pag_criar');
+  Route::post('/criar_relVservicos','RelVenServicosController@criar')->name('relVservicos.criar');
+  Route::get('/{relVservicos}/mostrar_ relVservicos','RelVenServicosController@mostrar')->name('relVservicos.mostrar');
 });
 
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVAmbulatorio'], function(){

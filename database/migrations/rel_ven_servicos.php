@@ -17,8 +17,8 @@ return new class extends Migration
         $table->id();
         $table->date('data_inicio')->notNull();
         $table->date('data_final')->notNull();
-        $table->integer('nif_paciente')->notNull();
-			  $table->string('nome_paciente')->notNull();
+        $table->integer('paciente_nif')->unsigned()->notNull();
+        $table->foreign('paciente_nif')->references('nif')->on('paciente')->onDelete('cascade');
 			  $table->string('tipo_servico')->notNull();
 			  $table->double('preco')->notNull()->default(0.0);
         $table->string('anotacoes')->notNull();
