@@ -33,6 +33,16 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relatorioDespesas'
     Route::delete('/{rel}/apagar_relatorio', 'DespesasTotaisController@apagar')->name('rel_dt.apagar');
 });
 
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'servicos'], function(){
+    Route::get('/','ServicosController@index')->name('servicos.index');
+    Route::get('/criar_servico','ServicosController@pag_criar')->name('servicos.pag_criar');
+    Route::post('/criar_servico','ServicosController@criar')->name('servicos.criar');
+    Route::get('/{servico}/servico','ServicosController@mostrar')->name('servicos.mostrar');
+    Route::delete('/{servico}/apagar_servico', 'ServicosController@apagar')->name('servicos.apagar');
+    Route::get('/{servico}/editarServico','ServicosController@editar')->name('servicos.editar');
+    Route::patch('/{servico}/editarServico','ServicosController@atualizar')->name('servicos.atualizar');
+});
+
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'teste'], function(){
     Route::get('/','TesteController@index')->name('teste.index');
     Route::get('/criar_teste','TesteController@pag_criar')->name('teste.pag_criar');
