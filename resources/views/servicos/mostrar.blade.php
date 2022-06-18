@@ -28,7 +28,10 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{$servico->data}}</td>
+                <?php $input = $servico->data; $date = strtotime($input); ?>
+                <td>
+                    <?php echo date('d/m/Y H:i', $date);?>
+                </td>
                 <td>{{$servico->nome}}</td>
                 <td>{{$servico->tipo}}</td>
                 <td>{{$servico->condicoes}}</td>

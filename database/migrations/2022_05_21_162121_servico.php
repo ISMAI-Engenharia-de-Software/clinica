@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('servico', function (Blueprint $table) {
             $table->id();
-            $table->date('data')->notNull();
+            $table->dateTime('data')->notNull();
             $table->string('nome')->notNull();
             $table->string('tipo')->notNull();
             $table->string('condicoes')->notNull();

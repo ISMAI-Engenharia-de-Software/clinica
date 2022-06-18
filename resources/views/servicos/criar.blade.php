@@ -33,7 +33,7 @@
 
             <div class="form-group">
                 <label for="data" class="form-label">Data</label>
-                <input required type="date" name="data" class="form-control" placeholder="Data">
+                <input required type="datetime-local" name="data" class="form-control" placeholder="Data">
                 @if ($errors->has('data'))
                     <span class="text-danger">{{ $errors->first('data') }}</span>
                 @endif

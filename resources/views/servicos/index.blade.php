@@ -26,8 +26,11 @@
         <tbody>
             @foreach($servicos as $servico)
                 <tr>
+                    <?php $input = $servico->data; $date = strtotime($input); ?>
                     <th scope="row">{{$servico->id}}</th>
-                    <td>{{$servico->data}}</td>
+                    <td>
+                        <?php echo date('d/m/Y H:i', $date);?>
+                    </td>
                     <td>{{$servico->nome}}</td>
                     <td>{{$servico->tipo}}</td>
                     <td>{{$servico->condicoes}}</td>
