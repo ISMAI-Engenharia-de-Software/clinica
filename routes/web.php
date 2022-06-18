@@ -104,3 +104,10 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_ambulatorio'],
     Route::post('/criar_fat_ambulatorio','ContaAmbulatorioController@criar')->name('fat_ambulatorio.criar');
     Route::get('/{fat_ambulatorio}/mostrar_fat_ambulatorio','ContaAmbulatorioController@mostrar_fat_ambulatorio')->name('fat_ambulatorio.mostrar_fat_ambulatorio');
   });
+
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'conta_ambulatorio'], function(){
+    Route::get('/','GestaoContaAmbulatorioController@index')->name('conta_ambulatorio.index');
+    Route::get('/criar_conta_ambulatorio','GestaoContaAmbulatorioController@pag_criar')->name('conta_ambulatorio.pag_criar');
+    Route::post('/criar_conta_ambulatorio','GestaoContaAmbulatorioController@criar')->name('conta_ambulatorio.criar');
+    Route::get('/{conta_ambulatorio}/mostrar_reg','GestaoContaAmbulatorioController@mostrar_reg')->name('conta_ambulatorio.mostrar_reg');
+  });
