@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RelatorioFaturaRequest;
 use App\Models\RelatorioFatura;
+use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 
 class RelatorioFaturaController extends Controller
 {
     public function index() {
-        $rels = RelatorioFatura::paginate(10);
+        $rels = RelatorioFatura::orderBy('data_criacao','desc')->paginate(10);
         Paginator::useBootstrap();
 
         return view('rel_fat.index', compact('rels'));
@@ -46,10 +48,11 @@ class RelatorioFaturaController extends Controller
         }
 
         $reqS['valor_total'] = (double)$relDT;
+        $reqS['data_criacao'] = Carbon::now();
 
         $rel=RelatorioFatura::create($reqS);
 
-        return redirect()->route('rel_fat.pag_rel', $rel->id)->with('success','Criado com Sucesso');
+        return redirect()->route('rel_fat.pag_rel', $rel->id)->with('success',"Relatório de Faturas #$rel->id Criado com Sucesso");
     }
 
     public function pag_rel(RelatorioFatura $rel) {
@@ -58,6 +61,6 @@ class RelatorioFaturaController extends Controller
 
     public function apagar(RelatorioFatura $rel) {
         $rel->delete();
-        return redirect()->route('rel_fat.index')->with('success', 'Apagado com Sucesso');
+        return redirect()->route('rel_fat.index')->with('success', "Relatório de Faturas #$rel->id Apagado com Sucesso");
     } 
 }
