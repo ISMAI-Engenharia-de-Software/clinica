@@ -13,6 +13,7 @@ class DespesasTotais extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'data_criacao',
         'data_inicio',
         'data_final',
         'internamento',
