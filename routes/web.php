@@ -111,3 +111,10 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'conta_ambulatorio'
     Route::post('/criar_conta_ambulatorio','GestaoContaAmbulatorioController@criar')->name('conta_ambulatorio.criar');
     Route::get('/{conta_ambulatorio}/mostrar_reg','GestaoContaAmbulatorioController@mostrar_reg')->name('conta_ambulatorio.mostrar_reg');
   });
+
+  Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'gestao_ambulatorio'], function(){
+    Route::get('/','GestaoAmbulatorioController@index')->name('gestao_ambulatorio.index');
+    Route::get('/criar_gestao_ambulatorio','GestaoAmbulatorioController@pag_criar')->name('gestao_ambulatorio.pag_criar');
+    Route::post('/criar_gestao_ambulatorio','GestaoAmbulatorioController@criar')->name('gestao_ambulatorio.criar');
+    Route::get('/{gestao_ambulatorio}/mostrar_reg','GestaoAmbulatorioController@mostrar_reg')->name('gestao_ambulatorio.mostrar_reg');
+  });
