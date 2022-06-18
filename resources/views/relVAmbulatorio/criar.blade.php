@@ -7,7 +7,7 @@
 
     </style>
     <div class="container">
-        <h1>Criar Relatório de Venda de Serviços</h1>
+        <h1>Criar Relatório de Venda de Ambulatorio</h1>
         <form method="POST" action="">
             @csrf
             <div class="form-group">

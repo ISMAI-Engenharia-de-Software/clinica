@@ -5,7 +5,7 @@
             background-color: #c5d7f2;
         }
     </style>
-    <h1>Relatorios de Vendas</h1>
+    <h1>Relatorios de Vendas de Ambulatorio</h1>
     <div style="margin-top: 20px">
         @include('layouts.partials.messages')
     </div>
@@ -24,22 +24,22 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($relVservico as $relVservicos)
+            @foreach ($RelVenAmbulatorio as $RelVenAmbulatorio)
                 <tr>
-                    <th scope="row">{{ $relVservicos->id }}</th>
-                    <td>{{ $n_paciente = DB::table('paciente')->where('nif', $relVservicos->paciente_nif)->value('nome') }}</td>
-                    <td>{{ $relVservicos->data_inicio}}</td>
-                    <td>{{ $relVservicos->data_final}}</td>
-                    <td>{{ $relVservicos->tipo_servico }}</td>
-                    <td>{{ $relVservicos->preco }}</td>
-                    <td>{{ $relVservicos->anotacoes }}</td>
-                    <td><a href="{{ route('relVservicos.mostrar', $relVservicos->id) }}" class="btn btn-primary">Ver</a></td>
+                    <th scope="row">{{ $RelVenAmbulatorio->id }}</th>
+                    <td>{{ $n_paciente = DB::table('paciente')->where('nif', $RelVenAmbulatorio->paciente_nif)->value('nome') }}</td>
+                    <td>{{ $RelVenAmbulatorio->data_inicio}}</td>
+                    <td>{{ $RelVenAmbulatorio->data_final}}</td>
+                    <td>{{ $RelVenAmbulatorio->tipo_servico }}</td>
+                    <td>{{ $RelVenAmbulatorio->preco }}</td>
+                    <td>{{ $RelVenAmbulatorio->anotacoes }}</td>
+                    <td><a href="{{ route('RelVAmbulatorio.mostrar', $RelVenAmbulatorio->id) }}" class="btn btn-primary">Ver</a></td>
                 </tr>
             @endforeach
         </tbody>
     </table>
     <div class="d-flex">
-        {!! $relVservico->links() !!}
+        {!! $RelVAmbulatorio->links() !!}
     </div>
 @endsection
 

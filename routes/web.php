@@ -93,7 +93,7 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVservicos'], fu
 
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVAmbulatorio'], function(){
   Route::get('/','RelVenAmbulatorioController@index')->name('relVAmbulatorio.index');
-  Route::get('/criar_relVAmbulatorio','RelVenAmbulatorioController@pag_criar')->name('relVAmbulatorio.pag_criar');
+  Route::get('/criar_relVAmbulatorio','RelVenAmbulatorioController@criar')->name('relVAmbulatorio.criar');
   Route::post('/criar_ relVAmbulatorio','RelVenAmbulatorioController@criar')->name('relVAmbulatorio.criar');
   Route::get('/{relVAmbulatorio}/mostrar_ relVAmbulatorio','RelVenAmbulatorioController@mostrar')->name('relVAmbulatorio.mostrar');
 });
