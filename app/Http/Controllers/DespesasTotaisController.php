@@ -47,7 +47,7 @@ class DespesasTotaisController extends Controller
         }
 
         $reqS['despesas_totais'] = (double)$relDT;
-        $reqS['data_criacao'] = Carbon::now()->format('Y-m-d H:i:s');
+        $reqS['data_criacao'] = Carbon::now()->timezone('Europe/Lisbon')->format('Y-m-d H:i:s');
 
         $rel=DespesasTotais::create($reqS);
 

@@ -34,8 +34,8 @@
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
-                    <th scope="col">Tipo Despesa</th>
-                    <th scope="col">Data Registo</th>
+                    <th scope="col">Tipo Fatura</th>
+                    <th scope="col">Data</th>
                     <th scope="col">Valor</th>
                 </tr>
             </thead>
@@ -46,8 +46,9 @@
                     @foreach ($qInt as $id)
                         <?php  ++$count ?>
                         <tr>
+                            <?php $input = DB::table('fat_internamento')->where('id', $id)->value('data'); $date = strtotime($input); ?>
                             <td>Internamento</td>
-                            <td>{{DB::table('fat_internamento')->where('id', $id)->value('data')}}</td>
+                            <td><?php echo date('d/m/Y H:i', $date);?></td>
                             <td>{{DB::table('fat_internamento')->where('id', $id)->value('valor')}}€</td>
                         </tr>
                     @endforeach
@@ -57,8 +58,9 @@
                     @foreach ($qAmb as $id)
                         <?php  ++$count ?>
                         <tr>
+                            <?php $input = DB::table('fat_ambulatorio')->where('id', $id)->value('data'); $date = strtotime($input); ?>
                             <td>Ambulatório</td>
-                            <td>{{DB::table('fat_ambulatorio')->where('id', $id)->value('data')}}</td>
+                            <td><?php echo date('d/m/Y H:i', $date);?></td>
                             <td>{{DB::table('fat_ambulatorio')->where('id', $id)->value('valor')}}€</td>
                         </tr>
                     @endforeach
@@ -68,8 +70,9 @@
                     @foreach ($qSer as $id)
                         <?php  ++$count ?>
                         <tr>
+                            <?php $input = DB::table('fat_servico')->where('id', $id)->value('data'); $date = strtotime($input); ?>
                             <td>Serviços</td>
-                            <td>{{DB::table('fat_servico')->where('id', $id)->value('data')}}</td>
+                            <td><?php echo date('d/m/Y H:i', $date);?></td>
                             <td>{{DB::table('fat_servico')->where('id', $id)->value('valor')}}€</td>
                         </tr>
                     @endforeach

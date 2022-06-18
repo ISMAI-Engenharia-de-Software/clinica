@@ -48,7 +48,7 @@ class RelatorioFaturaController extends Controller
         }
 
         $reqS['valor_total'] = (double)$relDT;
-        $reqS['data_criacao'] = Carbon::now();
+        $reqS['data_criacao'] = Carbon::now()->timezone('Europe/Lisbon')->format('Y-m-d H:i:s');
 
         $rel=RelatorioFatura::create($reqS);
 
