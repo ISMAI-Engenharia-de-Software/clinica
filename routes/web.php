@@ -67,6 +67,8 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'paciente'], functi
     Route::post('/criar_paciente','PacienteController@criar')->name('paciente.criar');
     Route::get('/{paciente}/mostrar_reg','PacienteController@mostrar_reg')->name('paciente.mostrar_reg');
     Route::delete('/{paciente}/eliminar','PacienteController@eliminar')->name('paciente.eliminar');
+    Route::get('/{paciente}/editar','PacienteController@editar')->name('paciente.editar');
+    Route::patch('/{paciente}/atualizar','PacienteController@atualizar')->name('paciente.atualizar');
 });
 
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_servico'], function(){

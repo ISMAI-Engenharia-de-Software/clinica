@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use App\Http\Requests\AtualizarPacienteRequest;
 
 class PacienteController extends Controller
 {
@@ -38,6 +39,18 @@ class PacienteController extends Controller
             'idade' => 'required|numeric|gt:0|lt:160'
         ]);
     }
+
+    public function editar(Paciente $paciente)
+    {
+        return view('paciente.editar',['paciente'=>$paciente]);
+    }
+
+    public function atualizar(Paciente $paciente, AtualizarPacienteRequest $request)
+    {
+        $paciente->update($request->validated());
+        return redirect()->route('paciente.index')->with('success','Perfil Atualizado');
+    }
+
     public function eliminar(Paciente $paciente)
     {
         $paciente->delete();

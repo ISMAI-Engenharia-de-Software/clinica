@@ -49,7 +49,7 @@
                     }
                 @endphp
                 <label for="Funcionario_NIF" class="form-label">NIF do Funcionário</label>
-                <input required chosen class="form-control" placeholder="NIF do Paciente" list="funcionarios"
+                <input required chosen class="form-control" placeholder="NIF do Funcionário" list="funcionarios"
                     name="funcionario_nif" pattern="^(@php
                         echo $patt2;
                     @endphp)$">
