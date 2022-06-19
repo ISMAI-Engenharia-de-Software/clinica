@@ -78,3 +78,12 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVAmbulatorio'],
   Route::post('/criar_ relVAmbulatorio','RelVenAmbulatorioController@criar')->name('relVAmbulatorio.criar');
   Route::get('/{relVAmbulatorio}/mostrar_ relVAmbulatorio','RelVenAmbulatorioController@mostrar')->name('relVAmbulatorio.mostrar');
 });
+
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'departamento'], function(){
+    Route::get('/','DepartamentoController@index')->name('departamento.index');
+    Route::get('/criar_departamento','DepartamentoController@pag_criar')->name('departamento.pag_criar');
+    Route::post('/criar_departamento','DepartamentoController@criar')->name('departamento.criar');
+    Route::get('/{departamento}/mostrar_reg','DepartamentoController@mostrar_reg')->name('departamento.mostrar_reg');
+    Route::delete('/{departamento}/eliminar','DepartamentoController@eliminar')->name('departamento.eliminar');
+    Route::patch('/{departamento}/atualizar','DepartamentoController@atualizar')->name('departamento.atualizar');
+});
