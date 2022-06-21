@@ -36,14 +36,9 @@ class GestaoContaAmbulatorioController extends Controller
         $conta_ambulatorio ??= new GestaoContaAmbulatorio();
         return request()->validate([
             'data' => 'required|date|before:now',
-            'valor' => 'required'
+            'valor' => 'required',
+            'paciente_nif' => 'required'
         ]);
     }
 
-
-    public function eliminar(GestaoContaAmbulatorio $conta_ambulatorio)
-    {
-        $conta_ambulatorio->delete();
-        return redirect(route('conta_ambulatorio.index'))->with('success','Ambulatorio eliminado com sucesso');
-    }
 }

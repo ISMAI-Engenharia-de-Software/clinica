@@ -75,7 +75,7 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_servico'], fun
     Route::get('/','FaturaServicoController@index')->name('fat_servico.index');
     Route::get('/criar_fat_servico','FaturaServicoController@pag_criar')->name('fat_servico.pag_criar');
     Route::post('/criar_fat_servico','FaturaServicoController@criar')->name('fat_servico.criar');
-    Route::get('/{fat_servico}/mostrar_reg','FaturaServicoController@mostrar')->name('fat_servico.mostrar');
+    Route::get('/{fat_servico}/mostrar_reg','FaturaServicoController@mostrar_reg')->name('fat_servico.mostrar_reg');
 });
 
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'funcionario'], function(){
@@ -119,4 +119,11 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'conta_ambulatorio'
     Route::get('/criar_gestao_ambulatorio','GestaoAmbulatorioController@pag_criar')->name('gestao_ambulatorio.pag_criar');
     Route::post('/criar_gestao_ambulatorio','GestaoAmbulatorioController@criar')->name('gestao_ambulatorio.criar');
     Route::get('/{gestao_ambulatorio}/mostrar_reg','GestaoAmbulatorioController@mostrar_reg')->name('gestao_ambulatorio.mostrar_reg');
+  });
+
+  Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_internamento'], function(){
+    Route::get('/','FaturaInternamentoController@index')->name('fat_internamento.index');
+    Route::get('/criar_fat_internamento','FaturaInternamentoController@pag_criar')->name('fat_internamento.pag_criar');
+    Route::post('/criar_fat_internamento','FaturaInternamentoController@criar')->name('fat_internamento.criar');
+    Route::get('/{fat_internamento}/mostrar_reg','FaturaInternamentoController@mostrar_reg')->name('fat_internamento.mostrar_reg');
   });
