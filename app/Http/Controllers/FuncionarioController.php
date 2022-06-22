@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Funcionario;
+use App\Http\Requests\AtualizarFuncionario;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
@@ -48,4 +49,15 @@ class FuncionarioController extends Controller
         $funcionario->delete();
         return redirect(route('funcionario.index'))->with('success','Funcionario eliminado com sucesso');
     }
+    public function editar(Funcionario $funcionario)
+    {
+        return view('funcionario.editar',['funcionario'=>$funcionario]);
+    }
+
+    public function atualizar(Funcionario $funcionario, AtualizarFuncionario $request)
+    {
+        $funcionario->update($request->validated());
+        return redirect()->route('funcionario.index')->with('success','Funcionario atualizado com sucesso');
+    }
 }
+

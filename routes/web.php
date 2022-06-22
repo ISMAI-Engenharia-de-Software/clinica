@@ -82,8 +82,10 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'funcionario'], fun
     Route::get('/','FuncionarioController@index')->name('funcionario.index');
     Route::get('/criar_funcionario','FuncionarioController@pag_criar')->name('funcionario.pag_criar');
     Route::post('/criar_funcionario','FuncionarioController@criar')->name('funcionario.criar');
-    Route::get('/{funcionario}/mostrar','FuncionarioController@mostrar')->name('funcionario.mostrar');
-    Route::delete('/{funcionario}/eliminar','FuncionarioController@eliminar')->name('funcionario.eliminar');
+    Route::get('/funcionario/mostrar','FuncionarioController@mostrar')->name('funcionario.mostrar');
+    Route::delete('/funcionario/eliminar','FuncionarioController@eliminar')->name('funcionario.eliminar');
+    Route::get('/funcionario/editar','FuncionarioController@editar')->name('funcionario.editar');
+    Route::patch('/funcionario/atualizar','FuncionarioController@atualizar')->name('funcionario.atualizar');
   });
 
 
@@ -120,6 +122,8 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'conta_ambulatorio'
     Route::get('/criar_gestao_ambulatorio','GestaoAmbulatorioController@pag_criar')->name('gestao_ambulatorio.pag_criar');
     Route::post('/criar_gestao_ambulatorio','GestaoAmbulatorioController@criar')->name('gestao_ambulatorio.criar');
     Route::get('/{gestao_ambulatorio}/mostrar_reg','GestaoAmbulatorioController@mostrar_reg')->name('gestao_ambulatorio.mostrar_reg');
+    Route::get('/{gestao_ambulatorio}/editar','GestaoAmbulatorioController@editar')->name('gestao_ambulatorio.editar');
+    Route::patch('/{gestao_ambulatorio}/atualizar','GestaoAmbulatorioController@atualizar')->name('gestao_ambulatorio.atualizar');
   });
 
   Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_internamento'], function(){

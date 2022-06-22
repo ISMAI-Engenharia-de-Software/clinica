@@ -50,8 +50,9 @@
                 <label for="Estado" class="form-label">Estado</label>
                 <input required list="estado" name="estado" class="form-control" placeholder="Estado">
                 <datalist id="estado">
-                    <option value="Em realizacao">
-                    <option value="Finalizado">
+                    <option value="Por efetuar">
+                    <option value="Efetuado">
+                    <option value="Cancelado">
                 </datalist>
                 @if ($errors->has('Estado'))
                     <span class="text-danger">{{ $errors->first('Estado') }}</span>

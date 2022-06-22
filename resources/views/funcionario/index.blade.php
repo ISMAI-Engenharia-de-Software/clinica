@@ -38,6 +38,7 @@
                         <td>{{ $n_departamento_id = DB::table('departamento')->where('id', $funcionario->departamento_id)->value('area_departamento') }}
                         </td>
                         <td><a href="{{ route('funcionario.mostrar', $funcionario->id) }}" class="btn btn-primary">Ver</a></td>
+                        <td><a href="{{ route('funcionario.editar', $funcionario->id)}}" class="btn btn-warning">Editar</a></td>
                         <td>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['funcionario.eliminar', $funcionario->id], 'style' => 'display::inline']) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
