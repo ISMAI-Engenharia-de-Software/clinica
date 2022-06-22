@@ -83,9 +83,9 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'funcionario'], fun
     Route::get('/criar_funcionario','FuncionarioController@pag_criar')->name('funcionario.pag_criar');
     Route::post('/criar_funcionario','FuncionarioController@criar')->name('funcionario.criar');
     Route::get('/funcionario/mostrar','FuncionarioController@mostrar')->name('funcionario.mostrar');
-    Route::delete('/funcionario/eliminar','FuncionarioController@eliminar')->name('funcionario.eliminar');
-    Route::get('/funcionario/editar','FuncionarioController@editar')->name('funcionario.editar');
-    Route::patch('/funcionario/atualizar','FuncionarioController@atualizar')->name('funcionario.atualizar');
+    Route::delete('/{funcionario}/eliminar','FuncionarioController@eliminar')->name('funcionario.eliminar');
+    Route::get('/{funcionario}/editar','FuncionarioController@editar')->name('funcionario.editar');
+    Route::patch('/{funcionario}/atualizar','FuncionarioController@atualizar')->name('funcionario.atualizar');
   });
 
 
