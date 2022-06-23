@@ -123,7 +123,7 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'conta_ambulatorio'
     Route::get('/{conta_ambulatorio}/mostrar_reg','GestaoContaAmbulatorioController@mostrar_reg')->name('conta_ambulatorio.mostrar_reg');
   });
 
-  Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'gestao_ambulatorio'], function(){
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'gestao_ambulatorio'], function(){
     Route::get('/','GestaoAmbulatorioController@index')->name('gestao_ambulatorio.index');
     Route::get('/criar_gestao_ambulatorio','GestaoAmbulatorioController@pag_criar')->name('gestao_ambulatorio.pag_criar');
     Route::post('/criar_gestao_ambulatorio','GestaoAmbulatorioController@criar')->name('gestao_ambulatorio.criar');
@@ -132,14 +132,14 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'conta_ambulatorio'
     Route::patch('/{gestao_ambulatorio}/atualizar','GestaoAmbulatorioController@atualizar')->name('gestao_ambulatorio.atualizar');
   });
 
-  Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_internamento'], function(){
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_internamento'], function(){
     Route::get('/','FaturaInternamentoController@index')->name('fat_internamento.index');
     Route::get('/criar_fat_internamento','FaturaInternamentoController@pag_criar')->name('fat_internamento.pag_criar');
     Route::post('/criar_fat_internamento','FaturaInternamentoController@criar')->name('fat_internamento.criar');
     Route::get('/{fat_internamento}/mostrar_reg','FaturaInternamentoController@mostrar_reg')->name('fat_internamento.mostrar_reg');
   });
 
-  Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'departamento'], function(){
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'departamento'], function(){
     Route::get('/','DepartamentoController@index')->name('departamento.index');
     Route::get('/criar_departamento','DepartamentoController@pag_criar')->name('departamento.pag_criar');
     Route::post('/criar_departamento','DepartamentoController@criar')->name('departamento.criar');
@@ -147,3 +147,13 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'conta_ambulatorio'
     Route::delete('/{departamento}/eliminar','DepartamentoController@eliminar')->name('departamento.eliminar');
     Route::patch('/{departamento}/atualizar','DepartamentoController@atualizar')->name('departamento.atualizar');
 });
+
+
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'RelVenInternamentoController'], function(){
+    Route::get('/','RelVenInternamentoController@index')->name('relVInternamento.index');
+    Route::get('/criar_relVInternamento','RelVenInternamentoController@criar')->name('relVInternamento.criar');
+    Route::post('/criar_relVInternamento','RelVenInternamentoController@criar')->name('relVInternamento.criar');
+    Route::get('/{relVInternamento}/mostrar_ relVInternamento','RelVenInternamentoController@mostrar')->name('relVInternamento.mostrar');
+  });
+
+

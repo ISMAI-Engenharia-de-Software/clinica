@@ -12,5 +12,8 @@
         <a class="menu-container" href="{{route('rel_dt.index')}}">
             Relatórios de Despesas Totais
         </a>
+        <a class="menu-container" href="{{route('relVInternamento.index')}}">
+            Relatórios de Vendas de Internamento
+        </a>
     </div>
 @endsection
