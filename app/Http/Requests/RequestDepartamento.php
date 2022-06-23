@@ -26,8 +26,8 @@ class RequestDepartamento extends FormRequest
         return [
             'data_update'=>'required|date|before:data_final',
             'data_criacao'=>'required|date|after:data_inicio|before:now',
-            'nif'=>'integer',
-            'idade'=>'integer',
+            'responsavel'=>'integer',
+            'areadepartamento'=>'integer',
         ];
     }
 }
