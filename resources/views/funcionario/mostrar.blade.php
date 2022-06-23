@@ -7,51 +7,52 @@
     </style>
     <div class="container">
         <div class="form-group row">
-            <label for="nif" class="col-sm-2 col-form-label">NIF</label>
+            <label for="Nif" class="col-sm-2 col-form-label">NIF</label>
             <div class="col-sm-10">
-                <input required type="number" disabled class="form-control" value="{{ $funcionario->nif }}">
+                <input required type="text" disabled class="form-control" value="{{ $funcionario->nif }}">
             </div>
         </div>
         <br>
         <div class="form-group row">
-            <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+            <label for="Nome" class="col-sm-2 col-form-label">Nome</label>
             <div class="col-sm-10">
                 <input required type="text" disabled class="form-control" value="{{ $funcionario->nome }}">
             </div>
         </div>
         <br>
         <div class="form-group row">
-            <label for="idade" class="col-sm-2 col-form-label">Idade</label>
+            <label for="Idade" class="col-sm-2 col-form-label">Idade</label>
             <div class="col-sm-10">
-                <input required type="number" disabled class="form-control" value="{{ $funcionario->idade }}">
+                <input required type="text" disabled class="form-control" value="{{ $funcionario->idade }}">
             </div>
         </div>
         <br>
         <div class="form-group row">
-            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <label for="Email" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
                 <input required type="text" disabled class="form-control" value="{{ $funcionario->email }}">
             </div>
         </div>
         <br>
         <div class="form-group row">
-            <label for="telemovel" class="col-sm-2 col-form-label">Telemóvel</label>
+            <label for="Telemovel" class="col-sm-2 col-form-label">Telemóvel</label>
             <div class="col-sm-10">
-                <input required type="number" disabled class="form-control" value="{{ $funcionario->telemovel }}">
+                <input required type="text" disabled class="form-control" value="{{ $funcionario->telemovel }}">
             </div>
         </div>
         <br>
         <div class="form-group row">
-            <label for="especializacao" class="col-sm-2 col-form-label">Especialização</label>
+            <label for="Especializacao" class="col-sm-2 col-form-label">Especialização</label>
             <div class="col-sm-10">
                 <input required type="text" disabled class="form-control" value="{{ $funcionario->especializacao }}">
             </div>
         </div>
         <br>
         <div class="form-group row">
-            <label for="departamento_id" class="col-sm-2 col-form-label">Departamento</label>
+            <label for="Departamento" class="col-sm-2 col-form-label">Departamento</label>
             <div class="col-sm-10">
-                <input required type="number" disabled class="form-control" value="{{ $funcionario->departamento_id }}">
+                <input required type="text" disabled class="form-control"
+                    value="{{ $n_departamento_id = DB::table('departamento')->where('id', $funcionario->departamento_id)->value('area_departamento') }}">
             </div>
         </div>
         <br>

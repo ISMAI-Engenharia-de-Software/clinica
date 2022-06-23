@@ -36,6 +36,7 @@
                         <td>{{ $gestao_ambulatorio->estado }}</td>
                         <td>{{ $gestao_ambulatorio->gastos }}</td>
                         <td><a href="{{ route('gestao_ambulatorio.mostrar_reg', $gestao_ambulatorio->id) }}" class="btn btn-primary">Ver</a></td>
+                        <td><a href="{{ route('gestao_ambulatorio.editar', $gestao_ambulatorio->id)}}" class="btn btn-warning">Editar</a></td>
                     </tr>
                 @endforeach
             </tbody>

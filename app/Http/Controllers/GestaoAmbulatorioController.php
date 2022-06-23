@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GestaoAmbulatorio;
+use App\Http\Requests\AtualizarGestaoAmbulatorio;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
@@ -44,9 +45,14 @@ class GestaoAmbulatorioController extends Controller
     }
 
 
-    public function eliminar(GestaoAmbulatorio $conta_ambulatorio)
+    public function editar(GestaoAmbulatorio $gestao_ambulatorio)
     {
-        $conta_ambulatorio->delete();
-        return redirect(route('conta_ambulatorio.index'))->with('success','Ambulatorio paciente eliminado com sucesso');
+        return view('gestao_ambulatorio.editar',['gestao_ambulatorio'=>$gestao_ambulatorio]);
+    }
+
+    public function atualizar(GestaoAmbulatorio $gestao_ambulatorio, AtualizarGestaoAmbulatorio $request)
+    {
+        $gestao_ambulatorio->update($request->validated());
+        return redirect()->route('gestao_ambulatorio.index')->with('success','Ambulatorio atualizado com sucesso');
     }
 }

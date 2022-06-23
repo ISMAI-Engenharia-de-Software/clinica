@@ -49,7 +49,7 @@
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Criar</button>
-            <a href="{{ route('fat_servico.index') }}" class="btn btn-dark">Cancelar</a>
+            <a href="{{ route('fat_internamento.index') }}" class="btn btn-dark">Cancelar</a>
         </form>
     </div>
 @endsection

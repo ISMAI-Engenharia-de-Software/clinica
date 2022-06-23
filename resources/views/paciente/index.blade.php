@@ -29,6 +29,7 @@
                         <td>{{ $paciente->nome }}</td>
                         <td>{{ $paciente->idade }}</td>
                         <td><a href="{{ route('paciente.mostrar_reg', $paciente->nif) }}" class="btn btn-primary">Ver</a></td>
+                        <td><a href="{{route('paciente.editar', $paciente->nif)}}" class="btn btn-warning">Editar</a></td>
                         <td>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['paciente.eliminar', $paciente->nif], 'style' => 'display::inline']) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}

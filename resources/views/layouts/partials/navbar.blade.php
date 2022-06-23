@@ -10,22 +10,22 @@
                     <a class="nav-link" href="{{ route('marcacao.index') }}">Consultas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Serviços</a>
+                    <a class="nav-link" href="{{route('servicos.index')}}">Serviços</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Ambulatório</a>
+                    <a class="nav-link" href="{{ route('gestao_ambulatorio.index') }}">Ambulatório</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Faturas e Contas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Relatórios</a>
+                    <a class="nav-link" href="{{route('menuRelatorios.index')}}">Relatórios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('teste.index') }}">Testes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Funcionários</a>
+                    <a class="nav-link" href="{{ route('funcionario.index') }}">Funcionários</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Departamentos</a>

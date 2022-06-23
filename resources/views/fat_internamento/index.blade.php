@@ -10,8 +10,8 @@
 
     </style>
     <div class="container">
-        <h1>Fatura de serviço</h1>
-        <a href="{{ route('fat_servico.pag_criar') }}" class="btn btn-success">Nova fatura</a>
+        <h1>Fatura de internamento</h1>
+        <a href="{{ route('fat_internamento.pag_criar') }}" class="btn btn-success">Nova fatura</a>
         <br><br>
         <table class="table table-striped table-dark">
             <thead>
@@ -24,21 +24,21 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($fatservicoo as $fat_servico)
+                @foreach ($fatinternamentoo as $fat_internamento)
                     <tr>
-                        <th scope="row">{{ $fat_servico->id }}</th>
-                        <td>{{ $n_paciente = DB::table('paciente')->where('nif', $fat_servico->paciente_nif)->value('nome') }}
+                        <th scope="row">{{ $fat_internamento->id }}</th>
+                        <td>{{ $n_paciente = DB::table('paciente')->where('nif', $fat_internamento->paciente_nif)->value('nome') }}
                         </td>
-                        <td>{{ $fat_servico->data }}</td>
-                        <td>{{ $fat_servico->valor }}</td>
-                        <td><a href="{{ route('fat_servico.mostrar_reg', $fat_servico->id) }}" class="btn btn-primary">Ver</a></td>
+                        <td>{{ $fat_internamento->data }}</td>
+                        <td>{{ $fat_internamento->valor }}</td>
+                        <td><a href="{{ route('fat_internamento.mostrar_reg', $fat_internamento->id) }}" class="btn btn-primary">Ver</a></td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
     <div class="d-flex">
-        {!! $fatservicoo->links() !!}
+        {!! $fatinternamentoo->links() !!}
     </div>
 @endsection
 

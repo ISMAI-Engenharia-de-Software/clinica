@@ -17,8 +17,9 @@
             <thead>
                 <tr>
                     <th scope="col" width="1%">NIF</th>
-                    <th scope="col" width="12%">Nome do Funcionario</th>
+                    <th scope="col" width="15%">Nome do Funcionario</th>
                     <th scope="col" width="5%">Idade</th>
+                    <th scope="col" width="5%">Email</th>
                     <th scope="col" width="10%">Telemóvel</th>
                     <th scope="col" width="15%">Especialização</th>
                     <th scope="col" width="10%">Departamento</th>
@@ -28,16 +29,18 @@
             <tbody>
                 @foreach ($funcionariot as $funcionario)
                     <tr>
-                        <td>{{ $funcionario->nif }}</td>
+                        <th scope="row">{{ $funcionario->nif }}</th>
                         <td>{{ $funcionario->nome }}</td>
                         <td>{{ $funcionario->idade }}</td>
                         <td>{{ $funcionario->email }}</td>
                         <td>{{ $funcionario->telemovel }}</td>
                         <td>{{ $funcionario->especializacao }}</td>
-                        <td>{{ $funcionario->departamento_id }}</td>
-                        <td><a href="{{ route('funcionario.mostrar_reg', $funcionario->id) }}" class="btn btn-primary">Ver</a></td>
+                        <td>{{ $n_departamento_id = DB::table('departamento')->where('id', $funcionario->departamento_id)->value('area_departamento') }}
+                        </td>
+                        <td><a href="{{ route('funcionario.mostrar', $funcionario->nif )}}" class="btn btn-primary">Ver</a></td>
+                        <td><a href="{{ route('funcionario.editar', $funcionario->nif)}}" class="btn btn-warning">Editar</a></td>
                         <td>
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['funcionario.eliminar', $funcionario->id], 'style' => 'display::inline']) !!}
+                            {!! Form::open(['method' => 'DELETE', 'route' => ['funcionario.eliminar', $funcionario->nif], 'style' => 'display::inline']) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
                         </td>
