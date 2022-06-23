@@ -1,0 +1,27 @@
+.main-container {
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.menu-container {
+    box-sizing: border-box;
+    margin-top: 50px;
+    padding: 65px 0;
+    text-align: center;
+    width: 600px;
+    background-color: #2E8BC0;
+    color: white;
+    border-radius: 20px;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+    font-weight: bold;
+}
+
+.menu-container:hover {
+    background-color: #2e6dc0;
+    color: white;
+}

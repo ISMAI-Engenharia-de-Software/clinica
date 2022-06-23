@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'menuRelatorios'], function(){
+  Route::get('/', 'MenuRelatorios@menu')->name('menuRelatorios.index');
+});
+
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relatorioFaturas'], function(){
     Route::get('/','RelatorioFaturaController@index')->name('rel_fat.index');
     Route::get('/criar_relatorio','RelatorioFaturaController@pag_criar')->name('rel_fat.pag_criar');
