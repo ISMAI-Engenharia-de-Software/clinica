@@ -35,7 +35,7 @@
 
             <div class="form-group">
                 <label for="data" class="form-label">Data</label>
-                <input required type="date" name="data" class="form-control" value="{{ $servico->data }}">
+                <input required type="datetime-local" name="data" class="form-control" value="{{ $servico->data }}">
                 @if ($errors->has('data'))
                     <span class="text-danger">{{ $errors->first('data') }}</span>
                 @endif

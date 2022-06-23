@@ -24,7 +24,7 @@ class ServicosRequest extends FormRequest
     public function rules()
     {
         return [
-            'data'=>'required|before_or_equal:now',
+            'data'=>'required|date',
             'nome'=>'required',
             'tipo'=>'required',
             'condicoes'=> 'required',
