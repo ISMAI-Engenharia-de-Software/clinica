@@ -25,3 +25,28 @@
     background-color: #2e6dc0;
     color: white;
 }
+
+.welcome-title {
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+}
+
+.welcome-sub {
+    width: fit-content;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+}
+
+.ref {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+
+}
