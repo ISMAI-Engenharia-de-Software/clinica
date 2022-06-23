@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\RelVInternamentoRequest;
 use App\Models\RelVInternamento;
 use App\Http\Controllers\Paginator;
 use Illuminate\Support\Facades\DB;

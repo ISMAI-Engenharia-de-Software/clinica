@@ -43,7 +43,7 @@
         <br>
 
         <div>
-            <a href="{{ route('funcionario.index') }}" class="btn btn-dark">Voltar</a>
+            <a href="{{ route('departamento.index') }}" class="btn btn-dark">Voltar</a>
         </div>
     </div>
 @endsection

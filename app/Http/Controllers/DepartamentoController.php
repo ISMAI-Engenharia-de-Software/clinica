@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Departamento;
-use App\Http\Requests\Request;
+use App\Http\Requests\RequestDepartamento;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 
