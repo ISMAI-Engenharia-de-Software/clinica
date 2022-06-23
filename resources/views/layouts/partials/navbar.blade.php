@@ -4,7 +4,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pacientes</a>
+                    <a class="nav-link" href="{{ route('paciente.index') }}">Pacientes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('marcacao.index') }}">Consultas</a>

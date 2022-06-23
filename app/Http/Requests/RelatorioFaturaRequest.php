@@ -24,8 +24,8 @@ class RelatorioFaturaRequest extends FormRequest
     public function rules()
     {
         return [
-            'data_inicio'=>'required|date|before:data_final',
-            'data_final'=>'required|date|after:data_inicio|before:now',
+            'data_inicio'=>'required|date|before_or_equal:data_final',
+            'data_final'=>'required|date|after_or_equal:data_inicio|before_or_equal:now',
             'internamento'=>'integer',
             'ambulatorio'=>'integer',
             'servicos'=>'integer',

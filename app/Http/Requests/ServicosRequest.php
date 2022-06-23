@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DespesasTotaisRequest extends FormRequest
+class ServicosRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,12 @@ class DespesasTotaisRequest extends FormRequest
     public function rules()
     {
         return [
-            'data_inicio'=>'required|date|before_or_equal:data_final',
-            'data_final'=>'required|date|after_or_equal:data_inicio|before_or_equal:now',
-            'internamento'=>'integer',
-            'ambulatorio'=>'integer',
-            'servicos'=>'integer',
+            'data'=>'required|before_or_equal:now',
+            'nome'=>'required',
+            'tipo'=>'required',
+            'condicoes'=> 'required',
+            'gastos'=> 'required|numeric',
+            'paciente_nif'=> 'required',
         ];
     }
 }

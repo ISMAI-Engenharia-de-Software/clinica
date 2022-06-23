@@ -3,15 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RelVenAmbulatorio;
+use App\Http\Controllers\Paginator;
+use Illuminate\Support\Facades\DB;
 
-class RelVenAmbulatorio extends Controller
+class RelVenAmbulatorioController extends Controller
 {
+
   public function index()
   {
       Paginator::useBootstrap();
-      return view('relVAmbulatorio.index', ['relVAmbulatorio' => RelVenAmbulatorio::paginate(40)]);
+      return view('relVAmbulatorio.index', ['relVAmbulatorio' => RelVenAmbulatorio::paginate(10)]);
   }
-  public function pag_criar()
+  public function criar()
   {
       return view('relVAmbulatorio.criar');
   }
@@ -19,4 +23,5 @@ class RelVenAmbulatorio extends Controller
   {
       return view('relVAmbulatorio.mostrar', ['relVAmbulatorio' => $relVAmbulatorio]);
   }
+
 }

@@ -5,15 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Paciente extends Model
+class fat_ambulatorio extends Model
 {
     use HasFactory;
 
-    public $table = 'paciente';
+    public $table = 'fat_ambulatorio';
     public $timestamps = false;
-    protected $primaryKey = 'nif';
+
     protected $fillable = [
-        'nif',
-        'nome',
-        'idade'];
+        'data',
+        'valor',
+        'paciente_nif'
+
+    ];
 }
+
+

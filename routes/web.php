@@ -33,6 +33,16 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relatorioDespesas'
     Route::delete('/{rel}/apagar_relatorio', 'DespesasTotaisController@apagar')->name('rel_dt.apagar');
 });
 
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'servicos'], function(){
+    Route::get('/','ServicosController@index')->name('servicos.index');
+    Route::get('/criar_servico','ServicosController@pag_criar')->name('servicos.pag_criar');
+    Route::post('/criar_servico','ServicosController@criar')->name('servicos.criar');
+    Route::get('/{servico}/servico','ServicosController@mostrar')->name('servicos.mostrar');
+    Route::delete('/{servico}/apagar_servico', 'ServicosController@apagar')->name('servicos.apagar');
+    Route::get('/{servico}/editarServico','ServicosController@editar')->name('servicos.editar');
+    Route::patch('/{servico}/editarServico','ServicosController@atualizar')->name('servicos.atualizar');
+});
+
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'teste'], function(){
     Route::get('/','TesteController@index')->name('teste.index');
     Route::get('/criar_teste','TesteController@pag_criar')->name('teste.pag_criar');
@@ -51,6 +61,14 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'marcacao'], functi
     Route::patch('/{marcacao}/atualizar','MarcacaoController@atualizar')->name('marcacao.atualizar');
 });
 
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'paciente'], function(){
+    Route::get('/','PacienteController@index')->name('paciente.index');
+    Route::get('/criar_paciente','PacienteController@pag_criar')->name('paciente.pag_criar');
+    Route::post('/criar_paciente','PacienteController@criar')->name('paciente.criar');
+    Route::get('/{paciente}/mostrar_reg','PacienteController@mostrar_reg')->name('paciente.mostrar_reg');
+    Route::delete('/{paciente}/eliminar','PacienteController@eliminar')->name('paciente.eliminar');
+});
+
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_servico'], function(){
     Route::get('/','FaturaServicoController@index')->name('fat_servico.index');
     Route::get('/criar_fat_servico','FaturaServicoController@pag_criar')->name('fat_servico.pag_criar');
@@ -63,23 +81,47 @@ Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'funcionario'], fun
     Route::get('/criar_funcionario','FuncionarioController@pag_criar')->name('funcionario.pag_criar');
     Route::post('/criar_funcionario','FuncionarioController@criar')->name('funcionario.criar');
     Route::get('/{funcionario}/mostrar_reg','FuncionarioController@mostrar_reg')->name('funcionario.mostrar_reg');
+    Route::delete('/{funcionario}/eliminar','FuncionarioController@eliminar')->name('funcionario.eliminar');
 });
 
-Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVServicos'], function(){
-  Route::get('/','RelVenServicosController@index')->name('relVServicos.index');
-  Route::get('/criar_relVServicos','RelVenServicosController@pag_criar')->name('relVServicos.pag_criar');
-  Route::post('/criar_ relVServicos','RelVenServicosController@criar')->name('relVServicos.criar');
-  Route::get('/{relVServicos}/mostrar_ relVServicos','RelVenServicosController@mostrar')->name('relVServicos.mostrar');
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVservicos'], function(){
+  Route::get('/','RelVenServicosController@index')->name('relVservicos.index');
+  Route::get('/criar_relVservicos','RelVenServicosController@pag_criar')->name('relVservicos.pag_criar');
+  Route::post('/criar_relVservicos','RelVenServicosController@criar')->name('relVservicos.criar');
+  Route::get('/{relVservicos}/mostrar_ relVservicos','RelVenServicosController@mostrar')->name('relVservicos.mostrar');
 });
 
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'relVAmbulatorio'], function(){
   Route::get('/','RelVenAmbulatorioController@index')->name('relVAmbulatorio.index');
-  Route::get('/criar_relVAmbulatorio','RelVenAmbulatorioController@pag_criar')->name('relVAmbulatorio.pag_criar');
+  Route::get('/criar_relVAmbulatorio','RelVenAmbulatorioController@criar')->name('relVAmbulatorio.criar');
   Route::post('/criar_ relVAmbulatorio','RelVenAmbulatorioController@criar')->name('relVAmbulatorio.criar');
   Route::get('/{relVAmbulatorio}/mostrar_ relVAmbulatorio','RelVenAmbulatorioController@mostrar')->name('relVAmbulatorio.mostrar');
 });
 
-Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'departamento'], function(){
+
+
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'fat_ambulatorio'], function(){
+    Route::get('/','ContaAmbulatorioController@index')->name('fat_ambulatorio.index');
+    Route::get('/criar_fat_ambulatorio','ContaAmbulatorioController@pag_criar')->name('fat_ambulatorio.pag_criar');
+    Route::post('/criar_fat_ambulatorio','ContaAmbulatorioController@criar')->name('fat_ambulatorio.criar');
+    Route::get('/{fat_ambulatorio}/mostrar_fat_ambulatorio','ContaAmbulatorioController@mostrar_fat_ambulatorio')->name('fat_ambulatorio.mostrar_fat_ambulatorio');
+  });
+
+Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'conta_ambulatorio'], function(){
+    Route::get('/','GestaoContaAmbulatorioController@index')->name('conta_ambulatorio.index');
+    Route::get('/criar_conta_ambulatorio','GestaoContaAmbulatorioController@pag_criar')->name('conta_ambulatorio.pag_criar');
+    Route::post('/criar_conta_ambulatorio','GestaoContaAmbulatorioController@criar')->name('conta_ambulatorio.criar');
+    Route::get('/{conta_ambulatorio}/mostrar_reg','GestaoContaAmbulatorioController@mostrar_reg')->name('conta_ambulatorio.mostrar_reg');
+  });
+
+  Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'gestao_ambulatorio'], function(){
+    Route::get('/','GestaoAmbulatorioController@index')->name('gestao_ambulatorio.index');
+    Route::get('/criar_gestao_ambulatorio','GestaoAmbulatorioController@pag_criar')->name('gestao_ambulatorio.pag_criar');
+    Route::post('/criar_gestao_ambulatorio','GestaoAmbulatorioController@criar')->name('gestao_ambulatorio.criar');
+    Route::get('/{gestao_ambulatorio}/mostrar_reg','GestaoAmbulatorioController@mostrar_reg')->name('gestao_ambulatorio.mostrar_reg');
+  });
+
+  Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'departamento'], function(){
     Route::get('/','DepartamentoController@index')->name('departamento.index');
     Route::get('/criar_departamento','DepartamentoController@pag_criar')->name('departamento.pag_criar');
     Route::post('/criar_departamento','DepartamentoController@criar')->name('departamento.criar');

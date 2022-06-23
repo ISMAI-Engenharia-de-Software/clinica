@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DespesasTotaisRequest;
 use App\Models\DespesasTotais;
+use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 
 class DespesasTotaisController extends Controller
 {
     public function index() {
-        $rels = DespesasTotais::paginate(10);
+        $rels = DespesasTotais::orderBy('data_criacao','desc')->paginate(10);
         Paginator::useBootstrap();
 
         return view('rel_dt.index', compact('rels'));
@@ -46,10 +47,11 @@ class DespesasTotaisController extends Controller
         }
 
         $reqS['despesas_totais'] = (double)$relDT;
+        $reqS['data_criacao'] = Carbon::now()->timezone('Europe/Lisbon')->format('Y-m-d H:i:s');
 
         $rel=DespesasTotais::create($reqS);
 
-        return redirect()->route('rel_dt.pag_rel', $rel->id)->with('success','Criado com Sucesso');
+        return redirect()->route('rel_dt.pag_rel', $rel->id)->with('success',"Relatório de Despesas Totais #$rel->id Criado com Sucesso");
     }
 
     public function pag_rel(DespesasTotais $rel) {
@@ -58,6 +60,6 @@ class DespesasTotaisController extends Controller
 
     public function apagar(DespesasTotais $rel) {
         $rel->delete();
-        return redirect()->route('rel_dt.index')->with('success', 'Apagado com Sucesso');
+        return redirect()->route('rel_dt.index')->with('success', "Relatório de Despesas Totais #$rel->id Apagado com Sucesso");
     } 
 }

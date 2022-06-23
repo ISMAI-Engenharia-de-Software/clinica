@@ -9,14 +9,21 @@
         <div class="form-group row">
             <label for="nif" class="col-sm-2 col-form-label">NIF</label>
             <div class="col-sm-10">
-                <input required type="text" disabled class="form-control" value="{{ $funcionario->nif }}">
+                <input required type="number" disabled class="form-control" value="{{ $funcionario->nif }}">
+            </div>
+        </div>
+        <br>
+        <div class="form-group row">
+            <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+            <div class="col-sm-10">
+                <input required type="text" disabled class="form-control" value="{{ $funcionario->nome }}">
             </div>
         </div>
         <br>
         <div class="form-group row">
             <label for="idade" class="col-sm-2 col-form-label">Idade</label>
             <div class="col-sm-10">
-                <input required type="text" disabled class="form-control" value="{{ $funcionario->idade }}">
+                <input required type="number" disabled class="form-control" value="{{ $funcionario->idade }}">
             </div>
         </div>
         <br>
@@ -30,7 +37,7 @@
         <div class="form-group row">
             <label for="telemovel" class="col-sm-2 col-form-label">Telemóvel</label>
             <div class="col-sm-10">
-                <input required type="text" disabled class="form-control" value="{{ $funcionario->telemovel }}">
+                <input required type="number" disabled class="form-control" value="{{ $funcionario->telemovel }}">
             </div>
         </div>
         <br>
@@ -44,7 +51,7 @@
         <div class="form-group row">
             <label for="departamento_id" class="col-sm-2 col-form-label">Departamento</label>
             <div class="col-sm-10">
-                <input required type="text" disabled class="form-control" value="{{ $funcionario->departamento_id }}">
+                <input required type="number" disabled class="form-control" value="{{ $funcionario->departamento_id }}">
             </div>
         </div>
         <br>

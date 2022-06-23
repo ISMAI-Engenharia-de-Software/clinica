@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('rel_despesas', function (Blueprint $table) {
             $table->id();
+            $table->dateTime('data_criacao')->notNull();
             $table->date('data_inicio')->notNull();
             $table->date('data_final')->notNull();
             $table->boolean('internamento')->notNull()->default(false);
